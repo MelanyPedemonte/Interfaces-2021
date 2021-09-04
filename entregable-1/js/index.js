@@ -1,15 +1,18 @@
 "use strict"
 
+//Creamos el contexto para el Canvas
 let ctx = document.querySelector("#mycanvas").getContext("2d");
-
 let widht = 500;
 let height = 500;
 let imageData = ctx.createImageData(widht, height);
+
+//Asignamos las varibles para RGBA
 let r = 0;
 let g = 0;
 let b = 0;
 let a = 255;
 
+//Recorremos la Matriz
 for (let x = 0; x < widht; x++) {
   for (let y = 0; y < height; y++) {
     setPixel(imageData, x, y, r, g, b, a);
