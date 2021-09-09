@@ -7,7 +7,7 @@ let height = 450;
 let imageData = ctx.createImageData(widht, height);
 /*Me dice el punto de coordenadas, el left y el top con respecto a la pantalla donde
 esta el canvas*/
-let rect = canvas.getBoundingClientRect();
+let rect = myCanvas.getBoundingClientRect();
 let x=0, y=0, dibujando=false, color='black', grosor=1; 
 
 //Asignamos las varibles para RGBA
@@ -42,7 +42,7 @@ function defGrosor(grosorSolicitado){
 }
 
 /*Con este evento le indico que esta dibujando y le doy las coordenadas Y e X*/
-canvas.addEventListener('mousedown', function(e){
+myCanvas.addEventListener('mousedown', function(e){
    x = e.clientX - rect.left;
    y = e.clientY - rect.top;
    dibujando = true;
@@ -50,11 +50,35 @@ canvas.addEventListener('mousedown', function(e){
 
 /*Con este evento le indico el movimiento, donde por la funcion anonima le indico los 
 lugares que esta trazando el cliente, comienza a dibujar*/
-canvas.addEventListener('mousemove', function(e){
+myCanvas.addEventListener('mousemove', function(e){
   //Ponemos triple igual para que se iguale en valor y tipo.  
   if(dibujando === true){
-    x1 = e.clientX - rect.left;
-    y2 = e.clientY - rect.top;
-    dibujar(x, y, x1, y2);
+    dibujar(x, y, e.clientX - rect.left, e.clientY - rect.top);
+    x = e.clientX - rect.left;
+    y = e.clientY - rect.top;
   }
 });
+
+/*Este evento sirve para cuando se deja de sostener el mouse */
+myCanvas.addEventListener('mouseup', function(e){
+  if(dibujando === true){
+    dibujar(x, y, e.clientX - rect.left, e.clientY - rect.top);
+    x=0;
+    y=0;
+    dibujando = false;
+  }
+});
+
+/**Creamos la funcion dibujar */
+function dibujar(x, y, x1, y1){
+  //Dibuja una nueva ruta
+  ctx.beginPath();
+  ctx.strokeStyle = color;
+  ctx.lineWidth = grosor;
+  //Doy punto inicial y final del trazo
+  ctx.moveTo(x, y);
+  ctx.lineTo(x1, y1);
+  //Le marco que es una linea
+  ctx.stroke();
+  ctx.closePath();
+}
