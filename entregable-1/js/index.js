@@ -41,7 +41,20 @@ function defGrosor(grosorSolicitado){
     grosor = grosorSolicitado;
 }
 
-myCanvas.addEventListener('mousedown', function(e){
+/*Con este evento le indico que esta dibujando y le doy las coordenadas Y e X*/
+canvas.addEventListener('mousedown', function(e){
    x = e.clientX - rect.left;
-   y = e.clientY - rect.top
-})
+   y = e.clientY - rect.top;
+   dibujando = true;
+});
+
+/*Con este evento le indico el movimiento, donde por la funcion anonima le indico los 
+lugares que esta trazando el cliente, comienza a dibujar*/
+canvas.addEventListener('mousemove', function(e){
+  //Ponemos triple igual para que se iguale en valor y tipo.  
+  if(dibujando === true){
+    x1 = e.clientX - rect.left;
+    y2 = e.clientY - rect.top;
+    dibujar(x, y, x1, y2);
+  }
+});
