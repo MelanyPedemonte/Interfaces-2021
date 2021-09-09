@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" type="text/css" rel="stylesheet">
     <title>
         Entregable TP1
     </title>
@@ -15,11 +16,13 @@
 
     <div class="container">
         <div class="context">
-            <canvas id="mycanvas" width="500" height="500" style="border: solid black 1px;"></canvas>
+            <canvas id="myCanvas" width="700" height="450"></canvas>
 
         </div>
         <div class="settings">
-
+            <input type="color" id="color" oninput="defColor(this.value);">
+            <input type="range" id="grosor" oninput="defGrosor(this.value);" 
+                   min="1" max="10" value="1">
         </div>
     </div>
     
