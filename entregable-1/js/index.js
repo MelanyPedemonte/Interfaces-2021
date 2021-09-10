@@ -8,7 +8,19 @@ let imageData = ctx.createImageData(widht, height);
 /*Me dice el punto de coordenadas, el left y el top con respecto a la pantalla donde
 esta el canvas*/
 let rect = myCanvas.getBoundingClientRect();
-let x=0, y=0, dibujando=false, color='black', grosor=1; 
+let x=0, y=0, dibujando=false; 
+
+let color;
+  document.querySelector("#color").addEventListener("change", function (e) {
+    color = e.target.value;
+    ctx.strokeStyle = color;
+  });
+
+  let grosor;
+  document.querySelector("#grosor").addEventListener("change", function (e) {
+    grosor = e.target.value;
+    ctx.lineWidth = grosor;
+  });
 
 //Asignamos las varibles para RGBA
 let r = 255;
@@ -30,15 +42,6 @@ function setPixel(imageData, x, y, r, g, b, a) {
   imageData.data[index + 1] = g;
   imageData.data[index + 2] = b;
   imageData.data[index + 3] = a;
-}
-
-/*Parte de lapiz, con grosor y color.*/
-function defColor(colorSolicitado){
-    color = colorSolicitado;
-}
-
-function defGrosor(grosorSolicitado){
-    grosor = grosorSolicitado;
 }
 
 /*Con este evento le indico que esta dibujando y le doy las coordenadas Y e X*/
