@@ -69,12 +69,24 @@ myCanvas.addEventListener('mouseup', function(e){
   }
 });
 
+//Agregamos el lapiz
+
+document.querySelector("#lapiz").addEventListener('click', lapiz);
+
+function lapiz() {
+  ctx.lineWidth = grosor;
+  ctx.strokeStyle = color;
+}; 
+
+document.querySelector("#borrar").addEventListener("click", function () {
+  ctx.lineWidth = grosor;
+  ctx.strokeStyle = "#FFFF";
+});
+
 /**Creamos la funcion dibujar */
 function dibujar(x, y, x1, y1){
   //Dibuja una nueva ruta
   ctx.beginPath();
-  ctx.strokeStyle = color;
-  ctx.lineWidth = grosor;
   //Doy punto inicial y final del trazo
   ctx.moveTo(x, y);
   ctx.lineTo(x1, y1);
