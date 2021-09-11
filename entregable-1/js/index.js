@@ -10,18 +10,6 @@ esta el canvas*/
 let rect = myCanvas.getBoundingClientRect();
 let x=0, y=0, dibujando=false; 
 
-let color;
-  document.querySelector("#color").addEventListener("change", function (e) {
-    color = e.target.value;
-    ctx.strokeStyle = color;
-  });
-
-  let grosor;
-  document.querySelector("#grosor").addEventListener("change", function (e) {
-    grosor = e.target.value;
-    ctx.lineWidth = grosor;
-  });
-
 //Asignamos las varibles para RGBA
 let r = 255;
 let g = 255;
@@ -72,23 +60,42 @@ myCanvas.addEventListener('mouseup', function(e){
   }
 });
 
-//Agregamos el lapiz
+//Utilizamos estos eventos para "escuchar" al color y al grosor
 
+let color="black";
+  document.querySelector("#color").addEventListener("change", changeColor);
+  
+  function changeColor(e) {
+    color = e.target.value;
+    ctx.strokeStyle = color;
+  };
+
+  let grosor=1;
+  document.querySelector("#grosor").addEventListener("change", changeGrosor);
+  
+  function changeGrosor(e) {
+    grosor = e.target.value;
+    ctx.lineWidth = grosor;
+  };
+
+//Este evento escucha al lapiz
 document.querySelector("#lapiz").addEventListener('click', lapiz);
 
+//la funcion lapiz() define el grosor y color que tendra el lapiz
 function lapiz() {
   ctx.lineWidth = grosor;
   ctx.strokeStyle = color;
 }; 
 
-document.querySelector("#borrar").addEventListener("click", function () {
+document.querySelector("#borrar").addEventListener("click", borrar);
+
+function borrar() {
   ctx.lineWidth = grosor;
   ctx.strokeStyle = "#FFFF";
-});
+};
 
 /**Creamos la funcion dibujar */
 function dibujar(x, y, x1, y1){
-  //Dibuja una nueva ruta
   ctx.beginPath();
   //Doy punto inicial y final del trazo
   ctx.moveTo(x, y);
@@ -97,3 +104,144 @@ function dibujar(x, y, x1, y1){
   ctx.stroke();
   ctx.closePath();
 }
+
+//Cargar imagen
+
+document.querySelector("#image").addEventListener("change", cargarImage);
+let content;
+let image;
+let imageWidth;
+let imageHeight;
+
+function cargarImage(e) {
+  let file = e.target.files[0];
+  let reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = (readerEvent) => {
+    content = readerEvent.target.result;
+    image = new Image();
+
+    imageLoad();
+  };
+};
+
+
+function imageLoad() {
+  image.src = content;
+
+  image.onload = function () {
+    imageHeight = myCanvas.height;
+    imageWidth = myCanvas.height;
+    myCanvas.width = imageWidth;
+    ctx.drawImage(this, 0, 0, imageWidth, imageHeight);
+    imageData = ctx.getImageData(0, 0, imageWidth, imageHeight);
+    ctx.putImageData(imageData, 0, 0);
+    lapiz();
+  }
+};
+
+/*Ejercicio 3 
+  Filtros negativo, brillo, binarizacion y sepia
+*/
+
+document.querySelector('#negativo').addEventListener('click', negativo);
+
+//Esta funcion le aplica el filtro negativo a la imagen
+function negativo() {
+  image.onload();
+
+  for (let y = 0; y < imageData.height; y++) {
+    for (let x = 0; x < imageData.width; x++) {
+      let index = (x + imageData.width * y) * 4;
+      
+      //invertimos los colores de cada pixel
+      let r = imageData.data[index + 0];
+      let g = imageData.data[index + 1];
+      let b = imageData.data[index + 2];
+
+      imageData.data[index + 0] = 255 - r;
+      imageData.data[index + 1] = 255 - g;
+      imageData.data[index + 2] = 255 - b;
+    }
+  }
+  ctx.putImageData(imageData, 0, 0);
+}
+
+document.querySelector('#brillo').addEventListener('click', brillo);
+
+//Esta funcion le aplica el filtro brillo a la imagen
+function brillo() {
+  for (let y = 0; y < imageData.height; y++) {
+    for (let x = 0; x < imageData.width; x++) {
+      let index = (x + imageData.width * y) * 4;
+
+      let r = imageData.data[index + 0];
+      let g = imageData.data[index + 1];
+      let b = imageData.data[index + 2];
+
+      imageData.data[index + 0] = r + 50;
+      imageData.data[index + 1] = g + 50;
+      imageData.data[index + 2] = b + 50;
+    }
+  }
+  ctx.putImageData(imageData, 0, 0);
+}
+
+document.querySelector('#binarizacion').addEventListener('click', binarizacion);
+
+//En esta funcion aplicamos el filtro de binarizacion
+function binarizacion() {
+  image.onload();
+  for (let y = 0; y < imageData.height; y++) {
+    for (let x = 0; x < imageData.width; x++) {
+      let index = (x + imageData.width * y) * 4;
+
+      let r = imageData.data[index + 0];
+      let g = imageData.data[index + 1];
+      let b = imageData.data[index + 2];
+
+      let rgb = (r + g + b);
+
+       if (rgb > 255/3)
+        rgb = 255;
+      else
+        rgb = 0;
+
+      imageData.data[index + 0] = rgb;
+      imageData.data[index + 1] = rgb;
+      imageData.data[index + 2] = rgb;
+    }
+  }
+  ctx.putImageData(imageData, 0, 0);
+}
+
+document.querySelector('#sepia').addEventListener('click', sepia);
+
+//En esta funcion aplicamos el filtro sepia
+function sepia() {
+  image.onload();
+
+  for (let y = 0; y < imageData.height; y++) {
+    for (let x = 0; x < imageData.width; x++) {
+      let index = (x + imageData.width * y) * 4;
+
+      let r = imageData.data[index + 0];
+      let g = imageData.data[index + 1];
+      let b = imageData.data[index + 2];
+
+      imageData.data[index + 0] = ( r * .393 ) + ( g *.769 ) + ( b * .189 );
+      imageData.data[index + 1] = ( r * .349 ) + ( g *.686 ) + ( b * .168 );
+      imageData.data[index + 2] = ( r * .272 ) + ( g *.534 ) + ( b * .131 );
+    }
+  }
+  ctx.putImageData(imageData, 0, 0);
+};
+  
+//Descargar imagen
+
+document.querySelector("#descargar").addEventListener("click", descargar);
+  
+function descargar() {
+  image = myCanvas.toDataURL("image/jpg");
+  this.href = image;
+};

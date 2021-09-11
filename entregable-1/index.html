@@ -20,11 +20,17 @@
 
         </div>
         <div class="settings">
-            <button class="rounded-pill btn btn-primary" id="lapiz">Lapiz</button>
+            <button id="lapiz">Lapiz</button>
             <button id="borrar">Goma</button>
             <input type="color" id="color">
-            <input type="range" id="grosor"  
-                   min="1" max="10" value="1">
+            <input type="range" id="grosor" min="1" max="10" value="1">
+            <button onclick="document.querySelector('#image').click();">Agregar Imagen</button>
+            <input type="file" id="image" style="display: none;">
+            <button id="negativo">Negativo</button>
+            <button id="brillo">Brillo</button>
+            <button id="binarizacion">Binarizacion</button>
+            <button id="sepia">Sepia</button>
+            <a id="descargar" download="image.jpg">Guardar</a>
         </div>
     </div>
     
