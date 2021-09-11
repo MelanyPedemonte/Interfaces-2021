@@ -202,7 +202,7 @@ function binarizacion() {
 
       let rgb = (r + g + b);
 
-       if (rgb > 255/3)
+       if (rgb/3 > 255/3)
         rgb = 255;
       else
         rgb = 0;
@@ -236,12 +236,19 @@ function sepia() {
   }
   ctx.putImageData(imageData, 0, 0);
 };
-  
-//Descargar imagen
+
 
 document.querySelector("#descargar").addEventListener("click", descargar);
-  
+
+//Descargar imagen  
 function descargar() {
   image = myCanvas.toDataURL("image/jpg");
   this.href = image;
 };
+
+document.getElementById("limpiar").addEventListener("click", limpiar);
+
+//Comenar un lienzo en blanco 
+function limpiar(){
+  ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+}
