@@ -1,9 +1,10 @@
 "use strict"
 
 //Creamos el contexto para el Canvas
-let ctx = document.querySelector("#myCanvas").getContext("2d");
+let myCanvas = document.getElementById("myCanvas");
+let ctx = myCanvas.getContext("2d");
 let widht = 700;
-let height =350;
+let height = 350;
 let imageData = ctx.createImageData(widht, height);
 /*Me dice el punto de coordenadas, el left y el top con respecto a la pantalla donde
 esta el canvas*/
@@ -277,3 +278,93 @@ function saturacion() {
   }
   ctx.putImageData(imageData, 0, 0);
 };
+
+document.querySelector('#blur').addEventListener('click', blur);
+
+  function blur() {
+
+    let imageData = ctx.getImageData(0 , 0, imageWidth, imageHeight);
+    let r,g,b,a=255;
+
+    for (let y = 0; y < imageData.height; y++) {
+      for (let x = 0; x < imageData.width; x++) {
+        r = promedioR(imageData, x, y);
+        g = promedioG(imageData, x, y);
+        b = promedioB(imageData, x, y);
+
+        setPixel(imageData, x, y, r, g, b, a);
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
+  };
+
+  function getIndex(imageData, x, y) {
+    let index = (x + y * imageData.width) * 4;
+    return index;
+  }
+
+ function promedioR(imageData, x, y){
+   //Valores de la primera fila
+   let pixel0= imageData.data[getIndex(imageData, x-1, y-1) + 0]; 
+   let pixel1= imageData.data[getIndex(imageData, x, y-1)+0];
+   let pixel2= imageData.data[getIndex(imageData, x+1, y-1)+0];
+
+   //Valores de la segunda fila
+   let pixel3= imageData.data[getIndex(imageData, x-1, y)+0];
+   let pixel4= imageData.data[getIndex(imageData, x, y)+0];
+   let pixel5= imageData.data[getIndex(imageData, x+1, y)+0];
+
+   //Valores de la tercera fila
+   let pixel6= imageData.data[getIndex(imageData, x-1, y+1)+0];
+   let pixel7= imageData.data[getIndex(imageData, x, y+1)+0];
+   let pixel8= imageData.data[getIndex(imageData, x+1, y+1)+0];
+
+   //Obtenemos el promedio del color rojo
+   let prom = (pixel0+pixel1+pixel2+pixel3+pixel4+pixel5+pixel6+pixel7+pixel8)/9;
+
+   return prom;
+ }
+
+ function promedioG(imageData, x, y){
+  //Valores de la primera fila
+  let pixel0= imageData.data[getIndex(imageData, x-1, y-1) + 1]; 
+  let pixel1= imageData.data[getIndex(imageData, x, y-1)+1];
+  let pixel2= imageData.data[getIndex(imageData, x+1, y-1)+1];
+
+  //Valores de la segunda fila
+  let pixel3= imageData.data[getIndex(imageData, x-1, y)+1];
+  let pixel4= imageData.data[getIndex(imageData, x, y)+1];
+  let pixel5= imageData.data[getIndex(imageData, x+1, y)+1];
+
+  //Valores de la tercera fila
+  let pixel6= imageData.data[getIndex(imageData, x-1, y+1)+1];
+  let pixel7= imageData.data[getIndex(imageData, x, y+1)+1];
+  let pixel8= imageData.data[getIndex(imageData, x+1, y+1)+1];
+
+  //Obtenemos el promedio del color Verde
+  let prom = (pixel0+pixel1+pixel2+pixel3+pixel4+pixel5+pixel6+pixel7+pixel8)/9;
+
+  return prom;
+}
+
+function promedioB(imageData, x, y){
+  //Valores de la primera fila
+  let pixel0= imageData.data[getIndex(imageData, x-1, y-1) + 2]; 
+  let pixel1= imageData.data[getIndex(imageData, x, y-1)+2];
+  let pixel2= imageData.data[getIndex(imageData, x+1, y-1)+2];
+
+  //Valores de la segunda fila
+  let pixel3= imageData.data[getIndex(imageData, x-1, y)+2];
+  let pixel4= imageData.data[getIndex(imageData, x, y)+2];
+  let pixel5= imageData.data[getIndex(imageData, x+1, y)+2];
+
+  //Valores de la tercera fila
+  let pixel6= imageData.data[getIndex(imageData, x-1, y+1)+2];
+  let pixel7= imageData.data[getIndex(imageData, x, y+1)+2];
+  let pixel8= imageData.data[getIndex(imageData, x+1, y+1)+2];
+
+  //Obtenemos el promedio del color rojo
+  let prom = (pixel0+pixel1+pixel2+pixel3+pixel4+pixel5+pixel6+pixel7+pixel8)/9;
+
+  return prom;
+}
