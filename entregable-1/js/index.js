@@ -3,7 +3,7 @@
 //Creamos el contexto para el Canvas
 let ctx = document.querySelector("#myCanvas").getContext("2d");
 let widht = 700;
-let height = 450;
+let height =350;
 let imageData = ctx.createImageData(widht, height);
 /*Me dice el punto de coordenadas, el left y el top con respecto a la pantalla donde
 esta el canvas*/
