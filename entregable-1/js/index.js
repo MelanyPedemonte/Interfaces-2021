@@ -252,3 +252,28 @@ document.getElementById("limpiar").addEventListener("click", limpiar);
 function limpiar(){
   ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
 }
+
+document.querySelector('#saturacion').addEventListener('click', saturacion);
+
+//En esta funcion aplicamos el filtro saturacion
+function saturacion() {
+  image.onload();
+
+  for (let y = 0; y < imageData.height; y++) {
+    for (let x = 0; x < imageData.width; x++) {
+      let index = (x + imageData.width * y) * 4;
+
+      let contraste = 100;
+      let factor = (259 * (contraste + 255)) / (255 * (259 - contraste));
+      
+      let r = imageData.data[index + 0];
+      let g = imageData.data[index + 1];
+      let b = imageData.data[index + 2];
+      
+      imageData.data[index + 0] = factor * (r-128) +128;
+      imageData.data[index + 1] = factor * (g-128) +128;
+      imageData.data[index + 2] = factor * (b-128) +128;
+    }
+  }
+  ctx.putImageData(imageData, 0, 0);
+};
