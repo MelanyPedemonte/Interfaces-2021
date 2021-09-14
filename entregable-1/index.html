@@ -21,32 +21,45 @@
     <div class="container">
 
         <div class="context">
-            <canvas id="myCanvas" width="700" height="350"></canvas>
+            <canvas id="myCanvas" width="700" height="390"></canvas>
         </div>
 
         <div class="settings">
-            <button id="lapiz">Lapiz</button>
-            <button id="borrar">Goma</button>
-            <input type="color" id="color">
-            <input type="range" id="grosor" min="1" max="10" value="1">
-            <button onclick="document.querySelector('#image').click();">Agregar Imagen</button>
-            <input type="file" id="image" style="display: none;">
-            <button id="negativo">Negativo</button>
-            <button id="brillo">Brillo</button>
-            <button id="binarizacion">Binarizacion</button>
-            <button id="sepia">Sepia</button>
-            <button><a id="descargar" download="image.jpg">Guardar</a></button>
-            <button id="limpiar">Limpiar</button>
-            <button id="saturacion">saturacion</button>
-            <button id="blur">blur</button>
+            
+            <div class="paint">
+                <h1>Herramientas de dibujo</h1>
+                <button id="lapiz"><i class="fas fa-pencil-alt"></i></button>
+                <button id="borrar"><i class="fas fa-eraser"></i></button>
+                <input type="color" id="color">
+                <input type="range" id="grosor" min="1" max="10" value="1">
+            </div>
+
+            <div class="filtros">
+                <h1>Aplicale filtros a tu imagen</h1>
+                <div class="image-functions">
+                    <button onclick="document.querySelector('#image').click();"><i class="fas fa-camera"></i></button>
+                    <input type="file" id="image" style="display: none;">
+                    <button><a id="descargar" download="image.jpg"><i class="fas fa-download"></i></a></button>
+                    <button id="limpiar"><i class="fas fa-broom"></i></button>
+                </div>
+                <div class="image-filters">
+                    <button id="negativo">Negativo</button>
+                    <button id="brillo">Brillo</button>
+                    <button id="binarizacion">Binarizacion</button>
+                    <button id="sepia">Sepia</button>
+                    <button id="saturacion">Saturacion</button>
+                    <button id="blur">Blur</button>
+                </div>
+            </div>
+            
         </div>
 
     </div>
     
     <footer>
         <ul>
-            <li><i class="fab fa-instagram"> <a href="https://www.instagram.com/pocha.diazbailey"target= _blank> @AyeDiazBailey</a> </i></li>
-            <li><i class="fab fa-instagram"> <a href="https://www.instagram.com/melanypedemonte"target= _blank> @MelanyPedemonte</a> </i></li>
+            <li><i class="fas fa-envelope-open-text"></i>ayediazbailey@gmail.com</i></li>
+            <li><i class="fas fa-envelope-open-text"></i>melanypedemonte@gmail.com</li>
         </ul>
     </footer>
 

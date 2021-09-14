@@ -8,35 +8,77 @@ body{
 /*Header*/
 header{
     padding: 3px;
+    height: auto;
 }
 
 img{
-    width: 1271px;
+    width: 100%;
     height: 165px;
+}
+
+button{
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: #D9C1BB;
+    border: #D9C1BB solid 1px;
+    color: black;
+    margin: 5px;
+}
+
+button i{
+    margin: 10px;
+}
+
+.image-filters button{
+    border-radius: 10%;
+    font-size: 15px;
+    width: 25%;
+    margin: 5px;
 }
 
 /*Container*/
 .container{
-    margin: 20px;
-    height: 385px;
+    margin-block-end: 10px;
+    margin-block-start: 8px;
+    height: auto;
+    display: flex;
 }
 
 /*Context*/
 .context{
+    padding-inline-end: 30px;
+    width: 720px;
 }
 
 #myCanvas{
     border: solid rgb(105, 102, 102) 1px;
     background: white;
+    margin-block-start: 10px;
+    margin: 9px;
 }
 
 /*Settings*/
 .settings{
+    text-align: center;
+    margin-block-start: 5px;
+}
+
+.paint{
+    padding-block-end: 5px;
+}
+
+.filtros{
+    padding-block-end: 25px;
+    padding-block-start: 25px;
+}
+
+.image-filters{
+    margin-top: 15px;
 }
 
 /*Footer*/
 footer{
-    background-color: #D9C1BB;
+    background-color: #CDC7BE;
     padding: 0.5px;
     height: 50px;
 }
@@ -44,14 +86,16 @@ footer{
 footer ul li{
     border: solid 1px color white;
     display: inline-block;
-    color: rgb(59, 27, 27);
-    margin-inline-start: 314px;
+    color:  rgb(49, 47, 47);
+    margin-inline-start: 220px;
 }
 
-footer ul li a{
+footer ul li i{
     text-decoration: none;
-    color: rgb(59, 27, 27);
+    color: rgb(134, 112, 112);
     display: block;
     display: inline-block;
+    margin-inline-end: 12px;
+
 }
   
