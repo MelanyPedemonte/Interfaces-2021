@@ -6,7 +6,7 @@ class Figure {
         this.fill = fill;
         this.ctx = ctx;
         this.resaltado = false;
-        this.resaltadoEstilo = 'red'; //Se puede agregar un metodo para cambiar el color
+        this.resaltadoEstilo = 'black'; //Se puede agregar un metodo para cambiar el color
     }
 
     //Metodos GET && SET

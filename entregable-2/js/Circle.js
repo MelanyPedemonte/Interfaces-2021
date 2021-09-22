@@ -23,7 +23,7 @@ class Circle extends Figure{
 
         if(this.resaltado == true){
             this.ctx.strokeStyle = this.resaltadoEstilo;
-            this.ctx.lineWidth = 3;
+            this.ctx.lineWidth = 2;
             this.ctx.stroke();
         }
 

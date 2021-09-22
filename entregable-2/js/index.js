@@ -9,6 +9,18 @@ let figures = [];
 let lastClickedFigure = null;
 let isMouseDown = false;
 
+//Added figures
+setTimeout(()=>{
+    addFigures();
+}, 333);
+
+function addFigures(){
+    addFigure();
+    if(figures.length < CANTFIG){
+        setTimeout(addFigures, 333);
+    }
+}
+
 //Carga aleatoria de figuras, modificar para que sea la que eliga el usuario
 function addFigure(){
     if(Math.random()>0.5){
@@ -17,13 +29,6 @@ function addFigure(){
         addCircle();
     }
     drawFigure();
-}
-
-function drawFigure(){
-    clearCanvas();
-    for(let i=0; i<figures.length; i++){
-        figures[i].draw();
-    }
 }
 
 function addRect(){
@@ -44,9 +49,12 @@ function addCircle(){
     figures.push(circle);
 }
 
-function clearCanvas(){
-    ctx.fillStyle = '#F8F8FF';
-    ctx.fillRect(0, 0, width, height);
+//Draw Figure
+function drawFigure(){
+    clearCanvas();
+    for(let i=0; i<figures.length; i++){
+        figures[i].draw();
+    }
 }
 
 function randomRGB(){
@@ -57,16 +65,39 @@ function randomRGB(){
     return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
-function addFigures(){
-    addFigure();
-    if(figures.length < CANTFIG){
-        setTimeout(addFigures, 333);
-    }
+/*Clear Canvas*/
+function clearCanvas(){
+    ctx.fillStyle = '#F8F8FF';
+    ctx.fillRect(0, 0, width, height);
 }
 
-setTimeout(()=>{
-    addFigures();
-}, 333);
+//Functions muouse
+function onMouseDown(e){
+    isMouseDown = true;
+
+    if (lastClickedFigure != null){
+        lastClickedFigure.setResaltado(false);
+        lastClickedFigure = null;
+    }
+
+    let clickFig = findClickedFigure(e.layerX, e.layerY); // layerX y layerY son las coordenadas de x e y en canvas
+    if(clickFig != null){
+        clickFig.setResaltado(true);
+        lastClickedFigure = clickFig;
+    }
+    drawFigure();
+}
+
+function onMouseUp(e){
+    isMouseDown = false;
+}
+
+function onMouseMove(e){
+    if(isMouseDown && lastClickedFigure != null) {
+        lastClickedFigure.setPosition(e.layerX, e.layerY);
+        drawFigure();
+    }
+}
 
 function findClickedFigure(x,y){
     for(let i=0; i< figures.length; i++){
@@ -77,6 +108,6 @@ function findClickedFigure(x,y){
     }
 }
 
-//canvas.addEventListener('mousedown', onMouseDown, false);
-//canvas.addEventListener('mouseup', onMouseUp, false);
-//canvas.addEventListener('mousemove', onMouseMove, false);
+canvas.addEventListener('mousedown', onMouseDown, false);
+canvas.addEventListener('mouseup', onMouseUp, false);
+canvas.addEventListener('mousemove', onMouseMove, false);
