@@ -1,15 +1,13 @@
 "use strict";
 class Board{
-    constructor(posX, posY, width, height, fill, context, board, cantPieces) {
+    constructor(posX, posY, width, height, fill, context, cantCol) {
         this.posX = posX;
         this.posY = posY;
         this.width = width;
         this.height = height;
         this.fill = fill;
         this.ctx = context;
-        this.board = board;
-        this.cantPieces = cantPieces;
-
+        this.cantCol = cantCol;
     }
 
     draw(){
@@ -17,8 +15,8 @@ class Board{
         let y = this.getPosY();
         let width = this.getWidth(); 
         let height = this.getHeight();
-        for(let i = 0; i < this.cantPieces; i++ ){
-            for(let j = 0; j < this.cantPieces; j++){
+        for(let i = 0; i < this.cantCol; i++ ){
+            for(let j = 0; j < this.cantCol; j++){
                 ctx.beginPath();
                 ctx.drawImage(board, x, y);
                 ctx.stroke();
@@ -43,5 +41,9 @@ class Board{
 
     getPosY(){
         return this.posY;
+    }
+
+    getPieces(){
+        return this.cantCol * this.cantCol;
     }
 } 
