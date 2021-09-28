@@ -1,12 +1,11 @@
 "use strict";
-class Board{
+class Board extends Game{
     constructor(posX, posY, width, height, fill, context, cantCol) {
-        this.posX = posX;
-        this.posY = posY;
+        super(posX, posY, fill, context);
         this.width = width;
         this.height = height;
-        this.fill = fill;
-        this.ctx = context;
+        this.imageAspectRatio;
+        this.imageScaledWidth;
         this.cantCol = cantCol;
     }
 
@@ -45,5 +44,18 @@ class Board{
 
     getPieces(){
         return this.cantCol * this.cantCol;
+    }
+
+    isPointInside(x, y) {
+
+        return false;
+    }
+
+    moveInside(x, y) {
+        let fil; let col;
+        col = Math.trunc((x - this.posX) / (this.imageScaledWidth / this.col));
+        fil = Math.trunc((y - this.posY) / (this.width / this.fil));
+
+        return (fil >= 0 && fil < this.fil && col >= 0 && col < this.col);
     }
 } 

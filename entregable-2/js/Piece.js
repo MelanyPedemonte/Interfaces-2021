@@ -1,57 +1,49 @@
 "use strict";
-class Piece{
-     //Constructor
-     constructor(x, y, radius, fill, ctx, relleno){
-        this.x = x;
-        this.y = y;
-        this.fill = fill;
-        this.ctx = ctx;
-        this.relleno = relleno;
+class Piece extends Game{
+    constructor(posX, posY, radius, fill, context) {
+        super(posX, posY, fill, context);
+
         this.radius = radius;
+        this.jugador = fill;
+
     }
 
-    //Metodos GET && SET
-    getPosition(x,y){
-        return{
-            x : this.getX(),
-            y : this.getY()
-        };
+    draw() {
+        super.draw();
+        let img;
+        if (this.jugador == 'jugador1') {
+            img = document.querySelector('#imgPrincipito');
+        } else {
+            img = document.querySelector('#imgZorro');
+        }
+
+        let imageScaled = this.radius * 2;
+        let posy = this.posY - this.radius;
+        let posx = this.posX - this.radius;
+
+        this.ctx.drawImage(img, posx, posy, imageScaled, imageScaled);
+
+        this.ctx.beginPath();
+        this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
+        //this.ctx.fill();
+
+
+        if (this.resaltado === true) {
+            this.ctx.strokeStyle = this.resaltadoEstilo;
+            this.ctx.lineWidth = 5;
+            this.ctx.stroke();
+        }
+        this.ctx.closePath();
     }
 
-    getX(){
-        return this.x;
-    }
-
-    getY(){
-        return this.y;
-    }
-
-    setPosition(x,y){
-        this.x = x;
-        this.y = y;
-    }
-
-    getRadius(){
+    getRadius() {
         return this.radius;
     }
 
-    setRadius(radius){
-        this.radius = radius;
+    isPointInside(x, y) {
+        let _x = this.posX - x;
+        let _y = this.posY - y;
+        //console.log(_x, _y);
+        return Math.sqrt(_x * _x + _y * _y) < this.radius;
     }
-
-    setResaltado(resaltado){
-        this.resaltado =resaltado;
-    }
-
-    //Metodo Especifico
-    draw(){
-        this.ctx.beginPath();
-        this.relleno.onload=function() { //la imagen debe cargarse
-            relleno=cxt1.createPattern(imagen1,"repeat"); //método createPattern
-            cxt1.fillStyle=relleno; //imagen como relleno
-        }
-        this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-        this.ctx.fill();
-        this.ctx.closePath();
-    }
-} 
+}

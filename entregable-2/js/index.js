@@ -9,54 +9,91 @@ let height = canvas.height;
 let  board = new Image();
 board.src = "./images/board/casillero.png";
 
-//Variables
+//Variables de ficha
+let tablero;
 let pieces =[];
+let lastClickedFigure = null;
+let isMouseDown = false;
+
+//Variables del juego
 
 //Dibuja el tablero
 board.onload = function(){
-    let color = "white";
-    let tablero = new Board(400, 150, 80, 80, color, ctx, 5);
+    let color = "black";
+    let tablero = new Board(400, 40, 80, 80, color, ctx, 5);
     tablero.draw();
     let cantFichas = tablero.getPieces();
     addPieces(cantFichas);
 }
 
-//Agrego las fichas
-function addPieces(cantFichas){
-    let jugador1 = 0;
-    if(jugador1 <= (cantFichas/2)){
-        addPieces();
-        jugador1 ++;
-    }else{
-        addPieces2();
+function addPiece(i, cantFichas) {
+    let posX = 0;
+    let posY = 0;
+    let color
+    if (i < (cantFichas/2)) {
+        posX = 200;
+        posY = 200;
+        color = 'jugador1';
+    } else {
+        posX = 1000;
+        posY = 200;
+        color = 'jugador2';
+    }
+    let ficha = new Piece(posX, posY, 33, color, ctx);
+    pieces.push(ficha);
+}
+
+function addPieces(cantFichas) {
+    for (let i = 0; i < cantFichas; i++) {
+        addPiece(i, cantFichas);
     }
     drawFigure();
 }
 
-function addPieces(){ 
-    let img=new Image(); //iniciar ruta
-    img.src="./images/pieces/principito.png";
-    let color = "white";
-    let p1 = new Piece(30, 150, 33, color, ctx, img);
-    pieces.push(p1);
-}
-
-function addPieces2(){ 
-    let imagen=new Image(); //iniciar ruta
-    imagen.src="./images/pieces/zorro.png";
-    let color = "white";
-    let p2 = new Piece(1000, 150, 23, color, ctx, imagen);
-    pieces.push(p2);
-}
-
-function drawFigure(){
-    clearCanvas();
-    for(let i=0; i<pieces.length; i++){
+function drawFigure() {
+    for (let i = 0; i < pieces.length; i++) {
         pieces[i].draw();
     }
 }
 
-function clearCanvas(){
-    ctx.fillStyle = '#F8F8FF';
-    ctx.fillRect(0, 0, width, height);
+function onMouseDown(e) {
+    isMouseDown = true;
+
+    if (lastClickedFigure != null) {
+        lastClickedFigure.setResaltado(false);
+        ultimoJugador = lastClickedFigure.getFill();
+        lastClickedFigure = null;
+    }
+
+    let clickFig = findClickedFigure(e.layerX, e.layerY); //coordenadas de x e y adentro del canvas
+    if (clickFig != null) {
+        clickFig.setResaltado(true);
+        lastClickedFigure = clickFig;
+    }
+
+    drawFigure();
 }
+
+function onMouseUp(e) {
+    isMouseDown = false;
+}
+
+function onMouseMove(e) {
+    if (isMouseDown && lastClickedFigure != null) {
+        lastClickedFigure.setPosition(e.layerX, e.layerY);
+        drawFigure();
+    }
+}
+
+
+function findClickedFigure(x, y) {
+    if(isMouseDown && lastClickedFigure != null) {
+        lastClickedFigure.setPosition(e.layerX, e.layerY);
+        drawFigure();
+    }
+}
+
+canvas.addEventListener('mousedown', onMouseDown, false);
+canvas.addEventListener('mouseup', onMouseUp, false);
+canvas.addEventListener('mousemove', onMouseMove, false);
+
