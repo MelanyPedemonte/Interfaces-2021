@@ -58,4 +58,4 @@ class Board extends Game{
 
         return (fil >= 0 && fil < this.fil && col >= 0 && col < this.col);
     }
-} 
+}

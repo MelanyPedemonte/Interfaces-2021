@@ -16,15 +16,31 @@ let lastClickedFigure = null;
 let isMouseDown = false;
 
 //Variables del juego
+let ultimoJugador;
 
 //Dibuja el tablero
+let cantFichas = 25;
+
+/** 
 board.onload = function(){
     let color = "black";
     let tablero = new Board(400, 40, 80, 80, color, ctx, 5);
     tablero.draw();
     let cantFichas = tablero.getPieces();
     addPieces(cantFichas);
+} */
+
+window.onload = function () {
+    addPieces(cantFichas);
 }
+
+function addTablero() {
+    let color = "black";
+
+    let tablero = new Board(400, 40, 80, 80, color, ctx, 5);
+    pieces.push(tablero);
+}
+
 
 function addPiece(i, cantFichas) {
     let posX = 0;
@@ -47,10 +63,12 @@ function addPieces(cantFichas) {
     for (let i = 0; i < cantFichas; i++) {
         addPiece(i, cantFichas);
     }
+    addTablero();
     drawFigure();
 }
 
 function drawFigure() {
+    clearCanvas();
     for (let i = 0; i < pieces.length; i++) {
         pieces[i].draw();
     }
@@ -85,11 +103,12 @@ function onMouseMove(e) {
     }
 }
 
-
 function findClickedFigure(x, y) {
-    if(isMouseDown && lastClickedFigure != null) {
-        lastClickedFigure.setPosition(e.layerX, e.layerY);
-        drawFigure();
+    for (let i = 0; i < pieces.length; i++) {
+        const p = pieces[i];
+        if (p.isPointInside(x, y) && (p.getFill() != ultimoJugador)) {
+            return p;
+        }
     }
 }
 
@@ -97,3 +116,7 @@ canvas.addEventListener('mousedown', onMouseDown, false);
 canvas.addEventListener('mouseup', onMouseUp, false);
 canvas.addEventListener('mousemove', onMouseMove, false);
 
+function clearCanvas() {
+    ctx.fillStyle = '#F8F8FF';
+    ctx.fillRect(0, 0, width, height);
+};
