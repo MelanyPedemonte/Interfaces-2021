@@ -6,7 +6,23 @@
     display:none;
 }
 
-img{
-    height: 200px;
+header img{
+    height: 100px;
     width: 1265px;    
+}
+
+body{
+    text-align: center;
+}
+
+.pieces img{
+    width: 60px;
+    height: 60px;
+    margin: 30px;
+    display: inline-block;
+}
+
+.rules{
+    font-family: 'Merienda', cursive;
+    color: tomato;
 }
