@@ -37,7 +37,7 @@ window.onload = function () {
 function addTablero() {
     let color = "black";
 
-    let tablero = new Board(400, 40, 80, 80, color, ctx, 5);
+    tablero = new Board(400, 40, 80, 80, color, ctx, 5);
     pieces.push(tablero);
 }
 
@@ -94,6 +94,12 @@ function onMouseDown(e) {
 
 function onMouseUp(e) {
     isMouseDown = false;
+    let x = e.layerX;
+    let y = e.layerY;
+    if(tablero.moveInside(x, y) && lastClickedFigure !=null){
+        tablero.addFicha(lastClickedFigure, e.layerX, e.layerY);
+        drawFigure();
+    }
 }
 
 function onMouseMove(e) {
