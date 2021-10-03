@@ -13,11 +13,10 @@ body{
 }
 
 header img{
-    height: 120px;
+    height: 150px;
     width: 100%;
 }
 
-/*Si le agrego el responsive no me toma para mover la ficha*/
 .canvas{
     margin: 0 auto;
     display: block;

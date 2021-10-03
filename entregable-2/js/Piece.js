@@ -8,6 +8,12 @@ class Piece extends Game{
 
     }
 
+    /*Getters and setters*/
+    getRadius() {
+        return this.radius;
+    }
+
+    /*Dibujo de la ficha*/
     draw() {
         super.draw();
         let img;
@@ -32,10 +38,6 @@ class Piece extends Game{
             this.ctx.stroke();
         }
         this.ctx.closePath();
-    }
-
-    getRadius() {
-        return this.radius;
     }
 
     isPointInside(x, y) {

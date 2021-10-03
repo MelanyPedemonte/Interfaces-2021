@@ -22,7 +22,66 @@ let ultimoJugador;
 //Dibuja el tablero
 let cantFichas = 16;
 
+/*Cuando carga la pagina llama a la funcion addPieces para que dibuje el tablero
+y a las fichas */
+window.onload = function () {
+    addPieces(cantFichas);
+}
+
+function addPieces(cantFichas) {
+    for (let i = 0; i < cantFichas; i++) {
+        addPiece(i, cantFichas);
+    }
+    addTablero();
+    drawFigure();
+}
+
+function addPiece(i, cantFichas) {
+    let posX = 0;
+    let posY = 0;
+    let color;
+
+    /*Le asigna el lado izquierdo del canvas al jugador 1*/
+    if (i < (cantFichas/2)) {
+        posX = 200;
+        posY = 150;
+        color = 'jugador1';
+    } else {
+        /*Le asigna el lado derecho  del canvas al jugador 2*/
+        posX = 1000;
+        posY = 150;
+        color = 'jugador2';
+    }
+
+    let ficha = new Piece(posX, posY, 33, color, ctx);
+    pieces.push(ficha);
+}
+
+function addTablero() {
+    let color = "white";
+    x = width/(3)+50;
+    y = (Math.trunc(height/6));
+    tablero = new Board(x, y, 80, 80, color, ctx, 4);
+    pieces.push(tablero);
+}
+
+/*Dibuja las piezas que tiene en arreglo pieces, pero primero limpia el canvas 
+con la funcion clearCanvas(), esto lo hacemos para que cada vez que se cambie algo
+en el tablero la imagen no quede repetida, por ej, cuando movemos la ficha no quede
+el camino de la imagen hasta el punto que lo movemos */
+function drawFigure() {
+    clearCanvas();
+    for (let i = 0; i < pieces.length; i++) {
+        pieces[i].draw();
+    }
+}
+
+/*Creamos esta función en el boton "Dibujar" para que los jugadores puedan cambiar
+las dimensiones del tablero en base a la cantidad de columnas que quiere que tenga
+el mismo */
 function redibujarTablero(){
+    /*Los valores del input pueden variar del 4 al 6, en base a eso armamos los if
+    para que los tablero queden centrados*/
     let cantCol = document.querySelector("#number").value;
     if(cantCol == 6){
         let x = 435 - ((cantCol - 4) * 30);
@@ -47,51 +106,13 @@ function redibujarTablero(){
     drawFigure();
 }
 
-window.onload = function () {
-    addPieces(cantFichas);
-}
+/*Funcion para limpiar el tablero */
+function clearCanvas() {
+    ctx.fillStyle = '#F8F8FF';
+    ctx.fillRect(0, 0, width, height);
+};
 
-function addTablero() {
-    let color = "white";
-    x = width/(3)+50;
-    y = (Math.trunc(height/6));
-    tablero = new Board(x, y, 80, 80, color, ctx, 4);
-    pieces.push(tablero);
-}
-
-
-function addPiece(i, cantFichas) {
-    let posX = 0;
-    let posY = 0;
-    let color;
-    if (i < (cantFichas/2)) {
-        posX = 200;
-        posY = 150;
-        color = 'jugador1';
-    } else {
-        posX = 1000;
-        posY = 150;
-        color = 'jugador2';
-    }
-    let ficha = new Piece(posX, posY, 33, color, ctx);
-    pieces.push(ficha);
-}
-
-function addPieces(cantFichas) {
-    for (let i = 0; i < cantFichas; i++) {
-        addPiece(i, cantFichas);
-    }
-    addTablero();
-    drawFigure();
-}
-
-function drawFigure() {
-    clearCanvas();
-    for (let i = 0; i < pieces.length; i++) {
-        pieces[i].draw();
-    }
-}
-
+/*Funciones para el movimiento de las fichas */
 function onMouseDown(e) {
     isMouseDown = true;
 
@@ -136,11 +157,8 @@ function findClickedFigure(x, y) {
     }
 }
 
+/*Llamado de los eventos con mouse*/
 canvas.addEventListener('mousedown', onMouseDown, false);
 canvas.addEventListener('mouseup', onMouseUp, false);
 canvas.addEventListener('mousemove', onMouseMove, false);
 
-function clearCanvas() {
-    ctx.fillStyle = '#F8F8FF';
-    ctx.fillRect(0, 0, width, height);
-};

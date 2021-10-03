@@ -8,13 +8,13 @@ class Game {
         this.ctx = context;
     }
 
-    setFill(fill) {
-        this.fill = fill
+    /*Getters and setters*/
+    getFill() {
+        return this.fill;
     }
 
-    setPosition(x, y) {
-        this.posX = x;
-        this.posY = y;
+    setFill(fill) {
+        this.fill = fill
     }
 
     getPosition() {
@@ -22,6 +22,11 @@ class Game {
             x: this.getPosX(),
             y: this.getPosY()
         };
+    }
+
+    setPosition(x, y) {
+        this.posX = x;
+        this.posY = y;
     }
 
     getPosX() {
@@ -32,10 +37,7 @@ class Game {
         return this.posY;
     }
 
-    getFill() {
-        return this.fill;
-    }
-
+    /*Dibujo, resaltado y si esta seleccionada la ficha*/
     draw() {
         this.ctx.fillStyle = this.fill;
     }

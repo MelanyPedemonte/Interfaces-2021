@@ -12,29 +12,7 @@ class Board extends Game{
         this.iniciarTablero();
     }
 
-    draw(){
-        let x = this.getPosX();
-        let y = this.getPosY();
-        let width = this.getWidth(); 
-        let height = this.getHeight();
-        for(let i = 0; i < this.cantCol; i++ ){
-            for(let j = 0; j < this.cantCol; j++){
-                ctx.beginPath();
-                ctx.drawImage(board, x, y);
-                ctx.stroke();
-                y = y + height;
-            }
-            y = this.getPosY();
-            x = x + width;
-        }
-    }
-
-    iniciarTablero() {
-        for (let f = 0; f < this.cantFil; f++) {
-            this.juego[f] = ['vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio'];
-        }
-    }
-
+    /*Getters and Setters*/ 
     getWidth(){
         return this.width;
     }
@@ -67,9 +45,29 @@ class Board extends Game{
         this.cantCol =cantCol;
     }
 
-    isPointInside(x, y) {
+    /*Dibujamos el tablero con un casillero que se repite*/ 
+    draw(){
+        let x = this.getPosX();
+        let y = this.getPosY();
+        let width = this.getWidth(); 
+        let height = this.getHeight();
+        for(let i = 0; i < this.cantCol; i++ ){
+            for(let j = 0; j < this.cantCol; j++){
+                ctx.beginPath();
+                ctx.drawImage(board, x, y);
+                ctx.stroke();
+                y = y + height;
+            }
+            y = this.getPosY();
+            x = x + width;
+        }
+    }
 
-        return false;
+    /*Metodos para incertar la ficha en el tablero, aun no anda*/ 
+    iniciarTablero() {
+        for (let f = 0; f < this.cantFil; f++) {
+            this.juego[f] = ['vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio'];
+        }
     }
 
     moveInside(x, y) {
@@ -121,5 +119,9 @@ class Board extends Game{
                 return;
             }
         }
+    }
+
+    isPointInside(x, y) {
+        return false;
     }
 }
