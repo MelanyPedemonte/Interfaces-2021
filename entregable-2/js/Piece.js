@@ -25,8 +25,6 @@ class Piece extends Game{
 
         this.ctx.beginPath();
         this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
-        //this.ctx.fill();
-
 
         if (this.resaltado === true) {
             this.ctx.strokeStyle = this.resaltadoEstilo;
@@ -43,7 +41,6 @@ class Piece extends Game{
     isPointInside(x, y) {
         let _x = this.posX - x;
         let _y = this.posY - y;
-        //console.log(_x, _y);
         return Math.sqrt(_x * _x + _y * _y) < this.radius;
     }
 }

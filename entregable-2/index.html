@@ -27,9 +27,10 @@
     </div>
     <div class="rules">
         <label for="">Selecciona la cantidad de columnas que deseas que tenga el tablero: </label>
-        <input type="number" min="1">
+        <input type="number" value="4" min="4" max="6" id="number">
+        <input type="button" value="Dibujar" onclick="redibujarTablero()">
     </div>
-    <canvas id="canvas" width="1250" height="600"></canvas>
+    <canvas id="canvas" width="1200" height="500"></canvas>
     <img src="./images/pieces/principito.png" id="imgPrincipito">
     <img src="./images/pieces/zorro.png" id="imgZorro">
     <script src="./js/index.js"></script>

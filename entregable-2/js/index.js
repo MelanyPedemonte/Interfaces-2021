@@ -4,6 +4,7 @@ let canvas = document.querySelector('#canvas');
 let ctx = canvas.getContext('2d');
 let width = canvas.width;
 let height = canvas.height;
+let x,y;
 
 //Variables de tablero
 let  board = new Image();
@@ -19,25 +20,42 @@ let isMouseDown = false;
 let ultimoJugador;
 
 //Dibuja el tablero
-let cantFichas = 25;
+let cantFichas = 16;
 
-/** 
-board.onload = function(){
-    let color = "black";
-    let tablero = new Board(400, 40, 80, 80, color, ctx, 5);
-    tablero.draw();
-    let cantFichas = tablero.getPieces();
-    addPieces(cantFichas);
-} */
+function redibujarTablero(){
+    let cantCol = document.querySelector("#number").value;
+    if(cantCol == 6){
+        let x = 435 - ((cantCol - 4) * 30);
+        let y = (Math.trunc(height/cantCol)/2) -30;
+        tablero.setPosY(y);
+        tablero.setPosX(x);
+    }
+    if(cantCol == 5){
+        let x = 435 - ((cantCol - 4) * 30);
+        let y = (Math.trunc(height/cantCol)/2);
+        tablero.setPosY(y);
+        tablero.setPosX(x);
+    }
+    if(cantCol == 4){
+        let x = width/(3)+50;;
+        let y = (Math.trunc(height/6));
+        tablero.setPosY(y);
+        tablero.setPosX(x);
+        
+    }
+    tablero.setCantCol(cantCol);
+    drawFigure();
+}
 
 window.onload = function () {
     addPieces(cantFichas);
 }
 
 function addTablero() {
-    let color = "black";
-
-    tablero = new Board(400, 40, 80, 80, color, ctx, 5);
+    let color = "white";
+    x = width/(3)+50;
+    y = (Math.trunc(height/6));
+    tablero = new Board(x, y, 80, 80, color, ctx, 4);
     pieces.push(tablero);
 }
 
@@ -45,14 +63,14 @@ function addTablero() {
 function addPiece(i, cantFichas) {
     let posX = 0;
     let posY = 0;
-    let color
+    let color;
     if (i < (cantFichas/2)) {
         posX = 200;
-        posY = 200;
+        posY = 150;
         color = 'jugador1';
     } else {
         posX = 1000;
-        posY = 200;
+        posY = 150;
         color = 'jugador2';
     }
     let ficha = new Piece(posX, posY, 33, color, ctx);
@@ -97,9 +115,9 @@ function onMouseUp(e) {
     let x = e.layerX;
     let y = e.layerY;
     if(tablero.moveInside(x, y) && lastClickedFigure !=null){
-        tablero.addFicha(lastClickedFigure, e.layerX, e.layerY);
-        drawFigure();
+        tablero.addPice(lastClickedFigure, e.layerX, e.layerY);
     }
+    drawFigure();
 }
 
 function onMouseMove(e) {

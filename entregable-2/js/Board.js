@@ -47,12 +47,24 @@ class Board extends Game{
         return this.posX;
     }
 
+    setPosX(posX){
+        this.posX = posX;
+    }
+
     getPosY(){
         return this.posY;
     }
 
+    setPosY(posY){
+        this.posY = posY;
+    }
+
     getPieces(){
         return this.cantCol * this.cantCol;
+    }
+
+    setCantCol(cantCol){
+        this.cantCol =cantCol;
     }
 
     isPointInside(x, y) {
@@ -68,26 +80,22 @@ class Board extends Game{
         return (fil >= 0 && fil < this.fil && col >= 0 && col < this.col);
     }
 
-    addFicha(ficha, x, y) {
+    addPiece(ficha, x, y) {
         let c; let col;
 
         col = Math.trunc((x - this.posX) / (this.imageScaledWidth / this.cantCol));
 
         if (col == '0') {
-            c = 207;
+            c = 435;
         } else if (col == '1') {
-            c = 281;
+            c = 515;
         } else if (col == '2') {
-            c = 356;
+            c = 595;
         } else if (col == '3') {
-            c = 430;
+            c = 675;
         } else if (col == '4') {
-            c = 504;
-        } else if (col == '5') {
-            c = 578;
-        } else if (col == '6') {
-            c = 653;
-        }
+            c = 755;
+        } 
 
         for (let f = this.cantFil - 1; f >= 0; f--) {
             if (this.juego[f][col] == 'vacio') {
@@ -110,7 +118,6 @@ class Board extends Game{
                     ficha.setPosition(c, 143);
                     this.juego[f][col] = ficha;
                 }
-                //this.mostrarTablero();
                 return;
             }
         }

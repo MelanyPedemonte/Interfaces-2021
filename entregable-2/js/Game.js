@@ -4,7 +4,7 @@ class Game {
         this.posY = posY;
         this.fill = fill;
         this.resaltado = false;
-        this.resaltadoEstilo = 'green';
+        this.resaltadoEstilo = 'tomato';
         this.ctx = context;
     }
 
