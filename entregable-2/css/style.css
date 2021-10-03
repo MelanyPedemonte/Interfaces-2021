@@ -17,13 +17,12 @@ header img{
     width: 100%;
 }
 
-/*Si le agrego el responsive no me toma para mover la ficha
-canvas{
-    width: 50%;
+/*Si le agrego el responsive no me toma para mover la ficha*/
+.canvas{
     margin: 0 auto;
     display: block;
-    border: 1px solid #d9d9d9;
-}*/
+    margin-block-end: 20px;
+}
 
 .pieces img{
     width: 50px;
@@ -36,4 +35,27 @@ canvas{
     font-family: 'Merienda', cursive;
     color: tomato;
     margin-block-end: 30px;
+}
+
+input{
+    border-color: tomato;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.dibujar{
+    background-color: tomato;
+    color: floralwhite;
+}
+
+footer{
+    font-family: 'Merienda', cursive;
+    color: tomato;
+    background-color: #F9D697;
+    text-align: center;
+}
+footer p{
+   display: inline-block;
+   margin-right: 100px;
+   margin-left: 100px;
 }

@@ -28,11 +28,17 @@
     <div class="rules">
         <label for="">Selecciona la cantidad de columnas que deseas que tenga el tablero: </label>
         <input type="number" value="4" min="4" max="6" id="number">
-        <input type="button" value="Dibujar" onclick="redibujarTablero()">
+        <input class="dibujar" type="button" value="Dibujar" onclick="redibujarTablero()">
     </div>
-    <canvas id="canvas" width="1200" height="500"></canvas>
-    <img src="./images/pieces/principito.png" id="imgPrincipito">
-    <img src="./images/pieces/zorro.png" id="imgZorro">
+    <div class="canvas">
+        <canvas id="canvas" width="1200" height="500"></canvas>
+        <img src="./images/pieces/principito.png" id="imgPrincipito">
+        <img src="./images/pieces/zorro.png" id="imgZorro">
+    </div>
+    <footer>
+        <p>Diaz Bailey, Viviana Ayelén</p>
+        <p>Pedemonte, Melany</p>
+    </footer>
     <script src="./js/index.js"></script>
     <script src="./js/Game.js"></script>
     <script src="./js/Board.js"></script>
