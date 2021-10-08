@@ -226,16 +226,17 @@ function clean() {
 };
 
 function buscarGanador() {
+    let winner = document.querySelector(".winner");
     let cantCol = document.querySelector("#number").value;
     if (tablero.buscarXenLinea(cantCol) == 1) {
         pts1++;
         puntos1.getAttributeNode('value').value = pts1;
-        alert("Ha Ganado el Jugador 1");
+        winner.innerHTML = "Ha ganado el Jugador 1";
         clean();
     } else if (tablero.buscarXenLinea(cantCol) == 2) {
         pts2++;
         puntos2.getAttributeNode('value').value = pts2;
-        alert("Ha Ganado el Jugador 2");
+        winner.innerHTML = "Ha ganado el Jugador 2";
         clean();
     }
 }
