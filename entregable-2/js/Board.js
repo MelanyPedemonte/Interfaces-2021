@@ -68,14 +68,14 @@ class Board extends Game{
         let ancho = 80; 
         let alto = 80;
 
-        for(let i = 0; i <this.cantCol; i++){ //+3 y +2 en los for son para que el tablero se ajuste dependiendo de la cantidad de fichas 
+        for(let i = 0; i <this.cantCol; i++){ 
             this.juego[i] = [];
             for(let j = 0; j < this.cantCol; j++){
                 this.juego[i][j] = 0;
-                y = y + alto; //posicion final de la y se convierte en posicion inicial de la proxima celda en y
+                y = y + alto; 
             }
-            y = this.getPosY(); //reseteo el valor de y a su valor inicial
-            x = x + ancho; // posicion final de la x se convierte en posicion inicial de la proxima celda en x
+            y = this.getPosY();
+            x = x + ancho;
         }
     }
 

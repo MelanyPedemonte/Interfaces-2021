@@ -66,10 +66,11 @@ function addPiece(i, cantFichas) {
 }
 
 function addTablero() {
+    let cantCol = document.querySelector("#number").value;
     let color = "white";
     x = width/(3)+50;
     y = (Math.trunc(height/6));
-    tablero = new Board(x, y, 80, 80, color, ctx, 4);
+    tablero = new Board(480,120 , 80, 80, color, ctx, cantCol);
     pieces.push(tablero);
     tablero.crearMatriz();
 }
@@ -93,25 +94,25 @@ function redibujarTablero(){
     para que los tablero queden centrados*/
     let cantCol = document.querySelector("#number").value;
     if(cantCol == 6){
-        let x = 435 - ((cantCol - 4) * 30);
-        let y = (Math.trunc(height/cantCol)/2) -30;
+        let x = 480;
+        let y = (Math.trunc(height/cantCol)/2) + 55;
         tablero.setPosY(y);
         tablero.setPosX(x);
     }
     if(cantCol == 5){
-        let x = 435 - ((cantCol - 4) * 30);
-        let y = (Math.trunc(height/cantCol)/2);
+        let x = 480;
+        let y = (Math.trunc(height/cantCol)/2) + 40;
         tablero.setPosY(y);
         tablero.setPosX(x);
     }
     if(cantCol == 4){
-        let x = width/(3)+50;;
-        let y = (Math.trunc(height/6));
+        let x = 480;
+        let y = 120;
         tablero.setPosY(y);
         tablero.setPosX(x);
-        
     }
     tablero.setCantCol(cantCol);
+    tablero.crearMatriz();
     drawFigure();
 }
 
@@ -183,7 +184,7 @@ function reDraw(){
 
 function addPieceToBoard(posX, posY){  
     let cantCol = document.querySelector("#number").value;
-    let inicTablero = 481;
+    let inicTablero = 480;
     let xTablero = posX - inicTablero;
     let tope = (cantCol) * 80;
     if(posY < inicTablero){
@@ -208,11 +209,11 @@ function verifyColumn(x, ficha){
                 tablero.juego[x][y] = 2;
             }
         }
-        x = x * 80 + 488;
-        y = y * 80 + 121;
+        x = x * 80 + 480 + 40;
+        y = y * 80 + 120 + 40;
         ficha.setPosition(x, y);
         reDraw();
-        return ((y-100)/80);
+        return ((y-120)/80);
     }
 }
 
