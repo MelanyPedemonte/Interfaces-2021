@@ -226,12 +226,13 @@ function clean() {
 };
 
 function buscarGanador() {
-    if (tablero.buscar4enLinea() == 1) {
+    let cantCol = document.querySelector("#number").value;
+    if (tablero.buscarXenLinea(cantCol) == 1) {
         pts1++;
         puntos1.getAttributeNode('value').value = pts1;
         alert("Ha Ganado el Jugador 1");
         clean();
-    } else if (tablero.buscar4enLinea() == 2) {
+    } else if (tablero.buscarXenLinea(cantCol) == 2) {
         pts2++;
         puntos2.getAttributeNode('value').value = pts2;
         alert("Ha Ganado el Jugador 2");

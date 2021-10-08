@@ -91,7 +91,7 @@ class Board extends Game{
         return false;
     }
 
-    buscar4enLinea() {
+    buscarXenLinea(cant) {
         //Buscar horizontalmente
         for (let f = 0; f < this.cantFil; f++) {
             let n1 = 0;
@@ -104,13 +104,13 @@ class Board extends Game{
                 else if (this.juego[f][c] == 1) {
                     n1++;
                     n2 = 0;
-                    if (n1 == 4)
+                    if (n1 == cant)
                         return 1;
                 }
                 else if (this.juego[f][c] == 2) {
                     n1 = 0;
                     n2++;
-                    if (n2 == 4)
+                    if (n2 == cant)
                         return 2;
                 }
             }
@@ -127,13 +127,13 @@ class Board extends Game{
                 else if (this.juego[f][c] == 1) {
                     n1++;
                     n2 = 0;
-                    if (n1 == 4)
+                    if (n1 == cant)
                         return 1;
                 }
                 else if (this.juego[f][c] == 2) {
                     n1 = 0;
                     n2++;
-                    if (n2 == 4)
+                    if (n2 == cant)
                         return 2;
                 }
             }
@@ -154,13 +154,13 @@ class Board extends Game{
                 else if (this.juego[f][c] == 1) {
                     n1++;
                     n2 = 0;
-                    if (n1 == 4)
+                    if (n1 == cant)
                         return 1;
                 }
                 else if (this.juego[f][c] == 2 ) {
                     n1 = 0;
                     n2++;
-                    if (n2 == 4)
+                    if (n2 == cant)
                         return 2;
                 }
             }
@@ -181,13 +181,13 @@ class Board extends Game{
                 else if (this.juego[f][c] == 1 ) {
                     n1++;
                     n2 = 0;
-                    if (n1 == 4)
+                    if (n1 == cant)
                         return 1;
                 }
                 else if (this.juego[f][c] == 2) {
                     n1 = 0;
                     n2++;
-                    if (n2 == 4)
+                    if (n2 == cant)
                         return 2;
                 }
             }
