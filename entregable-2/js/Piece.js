@@ -13,6 +13,10 @@ class Piece extends Game{
         return this.radius;
     }
 
+    getJugador(){
+        return this.jugador;
+    }
+
     /*Dibujo de la ficha*/
     draw() {
         super.draw();

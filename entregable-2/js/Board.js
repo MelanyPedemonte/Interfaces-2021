@@ -9,7 +9,6 @@ class Board extends Game{
         this.cantCol = cantCol;
         this.cantFil = cantCol;
         this.juego = [];
-        this.iniciarTablero();
     }
 
     /*Getters and Setters*/ 
@@ -63,10 +62,20 @@ class Board extends Game{
         }
     }
 
-    /*Metodos para incertar la ficha en el tablero, aun no anda*/ 
-    iniciarTablero() {
-        for (let f = 0; f < this.cantFil; f++) {
-            this.juego[f] = ['vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio'];
+    crearMatriz(){
+        let x = this.getPosX();
+        let y = this.getPosY();
+        let ancho = 80; 
+        let alto = 80;
+
+        for(let i = 0; i <this.cantCol; i++){ //+3 y +2 en los for son para que el tablero se ajuste dependiendo de la cantidad de fichas 
+            this.juego[i] = [];
+            for(let j = 0; j < this.cantCol; j++){
+                this.juego[i][j] = 0;
+                y = y + alto; //posicion final de la y se convierte en posicion inicial de la proxima celda en y
+            }
+            y = this.getPosY(); //reseteo el valor de y a su valor inicial
+            x = x + ancho; // posicion final de la x se convierte en posicion inicial de la proxima celda en x
         }
     }
 
@@ -76,49 +85,6 @@ class Board extends Game{
         fil = Math.trunc((y - this.posY) / (this.width / this.fil));
 
         return (fil >= 0 && fil < this.fil && col >= 0 && col < this.col);
-    }
-
-    addPiece(ficha, x, y) {
-        let c; let col;
-
-        col = Math.trunc((x - this.posX) / (this.imageScaledWidth / this.cantCol));
-
-        if (col == '0') {
-            c = 435;
-        } else if (col == '1') {
-            c = 515;
-        } else if (col == '2') {
-            c = 595;
-        } else if (col == '3') {
-            c = 675;
-        } else if (col == '4') {
-            c = 755;
-        } 
-
-        for (let f = this.cantFil - 1; f >= 0; f--) {
-            if (this.juego[f][col] == 'vacio') {
-                if (f == '5') {
-                    ficha.setPosition(c, 558);
-                    this.juego[f][col] = ficha;
-                } else if (f == '4') {
-                    ficha.setPosition(c, 475);
-                    this.juego[f][col] = ficha;
-                } else if (f == '3') {
-                    ficha.setPosition(c, 392);
-                    this.juego[f][col] = ficha;
-                } else if (f == '2') {
-                    ficha.setPosition(c, 309);
-                    this.juego[f][col] = ficha;
-                } else if (f == '1') {
-                    ficha.setPosition(c, 226);
-                    this.juego[f][col] = ficha;
-                } else {
-                    ficha.setPosition(c, 143);
-                    this.juego[f][col] = ficha;
-                }
-                return;
-            }
-        }
     }
 
     isPointInside(x, y) {

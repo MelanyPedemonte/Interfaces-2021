@@ -5,6 +5,7 @@ let ctx = canvas.getContext('2d');
 let width = canvas.width;
 let height = canvas.height;
 let x,y;
+let addficha = false;
 
 //Variables de tablero
 let  board = new Image();
@@ -25,6 +26,7 @@ let cantFichas = 16;
 /*Cuando carga la pagina llama a la funcion addPieces para que dibuje el tablero
 y a las fichas */
 window.onload = function () {
+    addTablero();
     addPieces(cantFichas);
 }
 
@@ -32,7 +34,7 @@ function addPieces(cantFichas) {
     for (let i = 0; i < cantFichas; i++) {
         addPiece(i, cantFichas);
     }
-    addTablero();
+   // addTablero();
     drawFigure();
 }
 
@@ -63,6 +65,7 @@ function addTablero() {
     y = (Math.trunc(height/6));
     tablero = new Board(x, y, 80, 80, color, ctx, 4);
     pieces.push(tablero);
+    tablero.crearMatriz();
 }
 
 /*Dibuja las piezas que tiene en arreglo pieces, pero primero limpia el canvas 
@@ -122,7 +125,7 @@ function onMouseDown(e) {
         lastClickedFigure = null;
     }
 
-    let clickFig = findClickedFigure(e.layerX, e.layerY); //coordenadas de x e y adentro del canvas
+    let clickFig = findClickedFigure(e.layerX, e.layerY);
     if (clickFig != null) {
         clickFig.setResaltado(true);
         lastClickedFigure = clickFig;
@@ -135,10 +138,11 @@ function onMouseUp(e) {
     isMouseDown = false;
     let x = e.layerX;
     let y = e.layerY;
-    if(tablero.moveInside(x, y) && lastClickedFigure !=null){
-        tablero.addPice(lastClickedFigure, e.layerX, e.layerY);
-    }
-    drawFigure();
+    if(lastClickedFigure != null){
+        let columX = addPieceToBoard(e.layerX, e.layerY);
+        let columY = verifyColumn(columX, lastClickedFigure);
+    };
+    console.table(tablero.juego);
 }
 
 function onMouseMove(e) {
@@ -161,4 +165,47 @@ function findClickedFigure(x, y) {
 canvas.addEventListener('mousedown', onMouseDown, false);
 canvas.addEventListener('mouseup', onMouseUp, false);
 canvas.addEventListener('mousemove', onMouseMove, false);
+
+function reDraw(){
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillRect(0,0, canvas.width, canvas.height); 
+    tablero.draw();
+    let cantCol = document.querySelector("#number").value;
+    addPieces(cantCol);
+}
+
+function addPieceToBoard(posX, posY){  
+    let cantCol = document.querySelector("#number").value;
+    let inicTablero = 481;
+    let xTablero = posX - inicTablero;
+    let tope = (cantCol) * 80;
+    if(posY < inicTablero){
+        if(xTablero >= 0 && xTablero <= tope){
+            addficha = true;
+            return Math.trunc(xTablero / 80);
+        }
+    }
+}             
+function verifyColumn(x, ficha){ 
+    let cantCol = document.querySelector("#number").value;
+    let y = 0;
+    if(addficha){
+        while(y < cantCol && tablero.juego[x][y] == 0 ){
+            y++;
+        };
+        y--;
+        if(y >= 0){
+            if (ficha.getFill() == 'jugador1'){
+                tablero.juego[x][y] = 1;
+            }else{
+                tablero.juego[x][y] = 2;
+            }
+        }
+        x = x * 80 + 488;
+        y = y * 80 + 121;
+        ficha.setPosition(x, y);
+        reDraw();
+        return ((y-100)/80);
+    }
+}
 
