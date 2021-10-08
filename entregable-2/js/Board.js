@@ -90,4 +90,109 @@ class Board extends Game{
     isPointInside(x, y) {
         return false;
     }
+
+    buscar4enLinea() {
+        //Buscar horizontalmente
+        for (let f = 0; f < this.cantFil; f++) {
+            let n1 = 0;
+            let n2 = 0;
+            for (let c = 0; c < this.cantCol; c++) {
+                if (this.juego[f][c] === 0) {
+                    n1 = 0;
+                    n2 = 0;
+                }
+                else if (this.juego[f][c] == 1) {
+                    n1++;
+                    n2 = 0;
+                    if (n1 == 4)
+                        return 1;
+                }
+                else if (this.juego[f][c] == 2) {
+                    n1 = 0;
+                    n2++;
+                    if (n2 == 4)
+                        return 2;
+                }
+            }
+        }
+
+        //Buscar verticalmente
+        for (let c = 0; c < this.cantCol; c++) {
+            let n1 = 0;
+            let n2 = 0;
+            for (let f = this.cantFil - 1; f >= 0; f--) {	
+                if (this.juego[f][c] === 0) {
+                    break;	
+                }
+                else if (this.juego[f][c] == 1) {
+                    n1++;
+                    n2 = 0;
+                    if (n1 == 4)
+                        return 1;
+                }
+                else if (this.juego[f][c] == 2) {
+                    n1 = 0;
+                    n2++;
+                    if (n2 == 4)
+                        return 2;
+                }
+            }
+        }
+
+        //Buscar en diagonal (de izquierda a derecha)
+        for (let i = -(this.cantCol + 4); i < this.cantCol; i++) {
+            let n1 = 0;
+            let n2 = 0;
+            for (let f = 0; f < this.cantFil; f++) {
+                let c = i + f;
+                if ((c < 0) || (c >= this.cantCol))
+                    continue;
+                if (this.juego[f][c] == 0) {
+                    n1 = 0;
+                    n2 = 0;
+                }
+                else if (this.juego[f][c] == 1) {
+                    n1++;
+                    n2 = 0;
+                    if (n1 == 4)
+                        return 1;
+                }
+                else if (this.juego[f][c] == 2 ) {
+                    n1 = 0;
+                    n2++;
+                    if (n2 == 4)
+                        return 2;
+                }
+            }
+        }
+
+        //Buscar en diagonal (de derecha a izquierda)
+        for (let i = 0; i < this.cantCol + 4; i++) {
+            let n1 = 0;
+            let n2 = 0;
+            for (let f = 0; f < this.cantFil; f++) {
+                let c = i - f;
+                if ((c < 0) || (c >= this.cantCol))
+                    continue;
+                if (this.juego[f][c] == 0 ) {
+                    n1 = 0;
+                    n2 = 0;
+                }
+                else if (this.juego[f][c] == 1 ) {
+                    n1++;
+                    n2 = 0;
+                    if (n1 == 4)
+                        return 1;
+                }
+                else if (this.juego[f][c] == 2) {
+                    n1 = 0;
+                    n2++;
+                    if (n2 == 4)
+                        return 2;
+                }
+            }
+        }
+        return 0;
+    }
+
 }

@@ -23,6 +23,12 @@ let ultimoJugador;
 //Dibuja el tablero
 let cantFichas = 16;
 
+//puntos
+let pts1 = 0;
+let pts2 = 0;
+let puntos1 = document.querySelector('#puntos1');
+let puntos2 = document.querySelector('#puntos2');
+
 /*Cuando carga la pagina llama a la funcion addPieces para que dibuje el tablero
 y a las fichas */
 window.onload = function () {
@@ -143,6 +149,7 @@ function onMouseUp(e) {
         let columY = verifyColumn(columX, lastClickedFigure);
     };
     console.table(tablero.juego);
+    setTimeout(buscarGanador, 500);
 }
 
 function onMouseMove(e) {
@@ -206,6 +213,28 @@ function verifyColumn(x, ficha){
         ficha.setPosition(x, y);
         reDraw();
         return ((y-100)/80);
+    }
+}
+
+function clean() {
+    canvas.width = width;
+    canvas.height = height;
+    pieces = [];
+    addTablero();
+    addPieces(cantFichas);
+};
+
+function buscarGanador() {
+    if (tablero.buscar4enLinea() == 1) {
+        pts1++;
+        puntos1.getAttributeNode('value').value = pts1;
+        alert("Ha Ganado el Jugador 1");
+        clean();
+    } else if (tablero.buscar4enLinea() == 2) {
+        pts2++;
+        puntos2.getAttributeNode('value').value = pts2;
+        alert("Ha Ganado el Jugador 2");
+        clean();
     }
 }
 
