@@ -42,6 +42,16 @@ window.onload = function () {
     addPieces(cantFichas, fichasSelect1, fichasSelect2);
 }
 
+//reiniciar juego
+function reiniciarJuego(){
+    pts1 = 0;
+    pts2 = 0;
+    puntos1.getAttributeNode('value').value = pts1;
+    puntos2.getAttributeNode('value').value = pts2;
+
+    clean();
+}
+
 function addPieces(cantFichas, fichasSelect1, fichasSelect2) {
     for (let i = 0; i < cantFichas; i++) {
         addPiece(i, cantFichas, fichasSelect1, fichasSelect2);
