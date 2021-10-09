@@ -72,8 +72,8 @@ function addPiece(i, cantFichas, fichasSelect1, fichasSelect2) {
         color = 'jugador1';
     } else {
         /*Le asigna el lado derecho  del canvas al jugador 2*/
-        posX = 1000;
-        posY = 150;
+        posX = 200;
+        posY = 350;
         color = 'jugador2';
     }
 
