@@ -42,6 +42,28 @@ window.onload = function () {
     addPieces(cantFichas, fichasSelect1, fichasSelect2);
 }
 
+//timer
+const staringMinutes = 1;
+let time = staringMinutes*60;
+const countdownEl = document.getElementById('countdown');
+
+let myTimer = setInterval(updateCountdown, 1000);
+
+function updateCountdown(){
+    const minutes = Math.floor(time/60);
+    let seconds = time % 60;
+
+    seconds = seconds < 1 ? '0' + seconds : seconds;
+
+    countdownEl.innerHTML = `${minutes} : ${seconds}`;
+    if (time > 0){
+        time --;
+    }else{
+        clean();
+        clearInterval(myTimer);
+    }
+}
+
 //reiniciar juego
 function reiniciarJuego(){
     pts1 = 0;
@@ -260,11 +282,13 @@ function buscarGanador() {
         puntos1.getAttributeNode('value').value = pts1;
         winner.innerHTML = "Ha ganado el Jugador 1";
         clean();
+        clearInterval(myTimer);
     } else if (tablero.buscarXenLinea(cantCol) == 2) {
         pts2++;
         puntos2.getAttributeNode('value').value = pts2;
         winner.innerHTML = "Ha ganado el Jugador 2";
         clean();
+        clearInterval(myTimer);
     }
 }
 
