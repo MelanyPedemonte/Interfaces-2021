@@ -29,22 +29,28 @@ let pts2 = 0;
 let puntos1 = document.querySelector('#puntos1');
 let puntos2 = document.querySelector('#puntos2');
 
+//ficha seleccionada de cada jugador
+let fichas1 = document.querySelector('#fichaJugador1');
+let fichasSelect1 = fichas1.options[fichas1.selectedIndex].value;
+let fichas2 = document.querySelector('#fichaJugador2');
+let fichasSelect2 = fichas2.options[fichas2.selectedIndex].value;
+
 /*Cuando carga la pagina llama a la funcion addPieces para que dibuje el tablero
 y a las fichas */
 window.onload = function () {
     addTablero();
-    addPieces(cantFichas);
+    addPieces(cantFichas, fichasSelect1, fichasSelect2);
 }
 
-function addPieces(cantFichas) {
+function addPieces(cantFichas, fichasSelect1, fichasSelect2) {
     for (let i = 0; i < cantFichas; i++) {
-        addPiece(i, cantFichas);
+        addPiece(i, cantFichas, fichasSelect1, fichasSelect2);
     }
    // addTablero();
     drawFigure();
 }
 
-function addPiece(i, cantFichas) {
+function addPiece(i, cantFichas, fichasSelect1, fichasSelect2) {
     let posX = 0;
     let posY = 0;
     let color;
@@ -61,7 +67,7 @@ function addPiece(i, cantFichas) {
         color = 'jugador2';
     }
 
-    let ficha = new Piece(posX, posY, 33, color, ctx);
+    let ficha = new Piece(posX, posY, 33, color, ctx, fichasSelect1, fichasSelect2);
     pieces.push(ficha);
 }
 
@@ -114,7 +120,7 @@ function redibujarTablero(){
     tablero.setCantCol(cantCol);
     tablero.crearMatriz();
     drawFigure();
-}
+};
 
 /*Funcion para limpiar el tablero */
 function clearCanvas() {
@@ -179,7 +185,11 @@ function reDraw(){
     ctx.fillRect(0,0, canvas.width, canvas.height); 
     tablero.draw();
     let cantCol = document.querySelector("#number").value;
-    addPieces(cantCol);
+    let f1 = document.querySelector('#fichaJugador1');
+    let fichas1 = f1.options[f1.selectedIndex].value;
+    let f2 = document.querySelector('#fichaJugador2');
+    let fichas2 = f2.options[f2.selectedIndex].value;
+    addPieces(cantCol, fichas1, fichas2);
 }
 
 function addPieceToBoard(posX, posY){  
@@ -222,7 +232,14 @@ function clean() {
     canvas.height = height;
     pieces = [];
     addTablero();
-    addPieces(cantFichas);
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillRect(0,0, canvas.width, canvas.height); 
+    tablero.draw();
+    let f1 = document.querySelector('#fichaJugador1');
+    let fichas1 = f1.options[f1.selectedIndex].value;
+    let f2 = document.querySelector('#fichaJugador2');
+    let fichas2 = f2.options[f2.selectedIndex].value;
+    addPieces(cantFichas, fichas1, fichas2);
 };
 
 function buscarGanador() {

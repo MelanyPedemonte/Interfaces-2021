@@ -1,10 +1,12 @@
 "use strict";
 class Piece extends Game{
-    constructor(posX, posY, radius, fill, context) {
+    constructor(posX, posY, radius, fill, context, ficha1, ficha2) {
         super(posX, posY, fill, context);
 
         this.radius = radius;
         this.jugador = fill;
+        this.ficha1 = ficha1;
+        this.ficha2 = ficha2;
 
     }
 
@@ -22,9 +24,17 @@ class Piece extends Game{
         super.draw();
         let img;
         if (this.jugador == 'jugador1') {
-            img = document.querySelector('#imgPrincipito');
+            if (this.ficha1 == 'principito'){
+                img = document.querySelector('#imgPrincipito');
+            }else{
+                img = document.querySelector('#imgPlaneta');
+            }
         } else {
-            img = document.querySelector('#imgZorro');
+            if (this.ficha2 == 'zorro'){
+                img = document.querySelector('#imgZorro');
+            }else{
+                img = document.querySelector('#imgSerpiente');
+            }
         }
 
         let imageScaled = this.radius * 2;

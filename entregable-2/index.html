@@ -17,26 +17,20 @@
     </header>
     
     <div class= "pieces">
-        <input type="button" id="fichaJugador1" value="Cambiar ficha Jugador 1">
-        <select>
-            <option value="elefante" style="background-image:'./images/pieces/elefante.png'">elefante</option>
-            <option value="oveja" style="background-image:'./images/pieces/oveja.png'">oveja</option>
-            <option value="planeta" style="background-image:'./images/pieces/planeta.png'">planeta</option>
-            <option value="principito"></option>
-            <option value="rey"></option>
-            <option value="rosa"></option>
-            <option value="serpiente"></option>
-            <option value="zorro"></option>
+        <input type="button" id="dibujarFichas1" value="Cambiar ficha Jugador 1" onclick="clean()">
+        <select id="fichaJugador1">
+            <option value="principito">principito</option>
+            <option value="planeta">planeta</option>
         </select>
-        <img src="./images/pieces/elefante.png" id="imgElefante">
-        <img src="./images/pieces/oveja.png" id="imgOveja">
-        <img src="./images/pieces/planeta.png" id="imgPlaneta">
         <img src="./images/pieces/principito.png" id="imgPrincipito">
-        <img src="./images/pieces/rey.png" id="imgRey">
-        <img src="./images/pieces/rosa.png" id="imgRosa">
-        <img src="./images/pieces/serpiente.png" id="imgSerpiente">
+        <img src="./images/pieces/planeta.png" id="imgPlaneta">
         <img src="./images/pieces/zorro.png" id="imgZorro">
-        <input type="button" id="fichaJugador2" value="Cambiar ficha Jugador 2">
+        <img src="./images/pieces/serpiente.png" id="imgSerpiente">
+        <input type="button" id="dibujarFichas2" value="Cambiar ficha Jugador 2" onclick="clean()">
+        <select id="fichaJugador2">
+            <option value="zorro">Zorro</option>
+            <option value="serpiente">serpiente</option>
+        </select>
     </div>
 
     <div class="rules">
