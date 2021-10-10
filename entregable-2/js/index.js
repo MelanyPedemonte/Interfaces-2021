@@ -60,7 +60,10 @@ function updateCountdown(){
         time --;
     }else{
         clean();
+        alert("Se acabo el tiempo de su partida");
         clearInterval(myTimer);
+        time = 60;
+        myTimer = setInterval(updateCountdown, 1000);
     }
 }
 
@@ -283,12 +286,16 @@ function buscarGanador() {
         winner.innerHTML = "Ha ganado el Jugador 1";
         clean();
         clearInterval(myTimer);
+        time = 60;
+        myTimer = setInterval(updateCountdown, 1000);
     } else if (tablero.buscarXenLinea(cantCol) == 2) {
         pts2++;
         puntos2.getAttributeNode('value').value = pts2;
         winner.innerHTML = "Ha ganado el Jugador 2";
         clean();
         clearInterval(myTimer);
+        time = 60;
+        myTimer = setInterval(updateCountdown, 1000);
     }
 }
 
