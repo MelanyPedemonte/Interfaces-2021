@@ -75,6 +75,9 @@ function reiniciarJuego(){
     puntos2.getAttributeNode('value').value = pts2;
 
     clean();
+    clearInterval(myTimer);
+    time = 60;
+    myTimer = setInterval(updateCountdown, 1000);
 }
 
 function addPieces(cantFichas, fichasSelect1, fichasSelect2) {
