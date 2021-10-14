@@ -288,7 +288,7 @@ document.querySelector('#blur').addEventListener('click', blur);
 
   function blur() {
 
-    let imageData = ctx.getImageData(0 , 0, imageWidth, imageHeight);
+    let imageData = ctx.getImageData(0 , 0, imageScaledWidth, imageScaledHeight);
     let r,g,b,a=255;
 
     for (let y = 0; y < imageData.height; y++) {
