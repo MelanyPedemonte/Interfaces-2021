@@ -107,39 +107,41 @@ function dibujar(x, y, x1, y1){
 }
 
 //Cargar imagen
-
-document.querySelector("#image").addEventListener("change", cargarImage);
+document.querySelector("#image-button").addEventListener("click", cargarImage);
 let content;
 let image;
-let imageWidth;
-let imageHeight;
+let imageAspectRatio;
+let imageScaledWidth;
+let imageScaledHeight;
 
 function cargarImage(e) {
-  let file = e.target.files[0];
+  let file = document.getElementById("inputImg").files[0];
   let reader = new FileReader();
   reader.readAsDataURL(file);
-  reader.onload = (readerEvent) => {
+  reader.onloadend = (readerEvent) => {
     content = readerEvent.target.result;
-    image = new Image();
-
+    image = new Image(); 
     imageLoad();
   };
 };
 
 
 function imageLoad() {
-  image.src = content;
 
   image.onload = function () {
-    imageHeight = myCanvas.height;
-    imageWidth = myCanvas.height;
-    myCanvas.width = imageWidth;
-    ctx.drawImage(this, 0, 0, imageWidth, imageHeight);
-    imageData = ctx.getImageData(0, 0, imageWidth, imageHeight);
+    imageAspectRatio = (1.0 * this.width) / this.height;
+    imageScaledHeight = myCanvas.height;
+    imageScaledWidth = myCanvas.height * imageAspectRatio;
+    myCanvas.width = imageScaledWidth;
+    ctx.drawImage(this, 0, 0, imageScaledWidth, imageScaledHeight);
+    imageData = ctx.getImageData(0, 0, imageScaledWidth, imageScaledHeight);
     ctx.putImageData(imageData, 0, 0);
     lapiz();
   }
+
+  image.src = content;
 };
+
 
 /*Ejercicio 3 
   Filtros negativo, brillo, binarizacion y sepia
@@ -247,9 +249,12 @@ function descargar() {
   this.href = image;
 };
 
+
+//document.getElementById('limpiar').addEventListener('click', imgLoad);
+
 document.getElementById("limpiar").addEventListener("click", limpiar);
 
-//Comenar un lienzo en blanco 
+//Comenzar un lienzo en blanco 
 function limpiar(){
   ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
 }

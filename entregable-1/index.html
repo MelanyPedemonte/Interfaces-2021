@@ -37,12 +37,16 @@
             <div class="filtros">
                 <h1>Aplicale filtros a tu imagen</h1>
                 <div class="image-functions">
-                    <button onclick="document.querySelector('#image').click();"><i class="fas fa-camera"></i></button>
-                    <input type="file" id="image" style="display: none;">
                     <button><a id="descargar" download="image.jpg"><i class="fas fa-download"></i></a></button>
                     <button id="limpiar"><i class="fas fa-broom"></i></button>
                 </div>
                 <div class="image-filters">
+                    <div>
+                        <input class="form-control" type="file" id="inputImg">
+                    </div>
+                    <div>
+                        <button id="image-button" class="btn btn-danger"> Cargar Imagen </button>
+                    </div>
                     <button id="negativo">Negativo</button>
                     <button id="brillo">Brillo</button>
                     <button id="binarizacion">Binarizacion</button>
