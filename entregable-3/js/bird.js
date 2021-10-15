@@ -14,19 +14,22 @@ class Bird {
 
     //Metodo para calcular altura y velocidad
     update(){
+        let curve = Math.sin(angle) * 20;
         /*Controla que el personaje no pueda bajar mas que el alto del canvas menos 
         el alto del personaje x3 */
-        if(this.y > canvas.height - (this.height * 3)){
-            this.y = canvas.height - (this.height * 3);
+        if(this.y > canvas.height - (this.height * 3) + curve){
+            this.y = canvas.height - (this.height * 3) + curve;
             this.vy = 0;
         }else{
             //Hace que suba el personaje en la velocidad aplicada
             this.vy += this.weight;
+            this.vy *= 0.9;
             this.y += this.vy;
         }
         //Le pongo un tope hasta donde puede subir
         if(this.y < 0 + this.height){
             this.y = this.height + 0;
+            this.vy = 0;
         }
         //Cuando suelto baja en lo que indica flap
         if(spacePressed){
@@ -39,7 +42,7 @@ class Bird {
     }
 
     draw(){
-        ctx.fillStyle = 'pink';
+        ctx.fillStyle = '#e17055';
         ctx.fillRect (this.x, this.y, this.width, this.height);
     }
 }
