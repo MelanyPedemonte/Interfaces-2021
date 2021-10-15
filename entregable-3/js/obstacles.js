@@ -4,7 +4,7 @@ class Obstacle{
         this.bottom = (Math.random() * canvas.height/3) + 40;
         this.x = canvas.width;
         this.width = 30;
-        this.color = 'hsla(' + hue + ', 100%, 50%)';
+        this.color = 'hsla(' + hue + ', 100%, 50%, 0.9)';
     }
 
     draw(){
@@ -17,4 +17,13 @@ class Obstacle{
         this.x -= gameSpeed;
         this.draw();
     }
+
+    getX() {
+        return this.x;
+    }
+
+    getWidth() {
+        return this.width;
+    }
+
 }

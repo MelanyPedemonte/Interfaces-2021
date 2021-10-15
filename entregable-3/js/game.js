@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 canvas.width = 800;
 canvas.height = 400;
 
-//Game runs
+//Variables para el uso del juego utilizadas en las distintas clases
 let spacePressed = false; //Espacio presionado
 let angle = 0; // Angulo
 let hue = 0; //Lo uso para modificar el color del particle
@@ -21,14 +21,22 @@ const particlesArray = [];
 //Obstacle
 const obstaclesArray = [];
 
+//Animaciones
+const bang = new Image();
+bang.src = './Animaciones/bang.png'
+
 function animate(){
     //Limpia el personaje
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     handleObstacles();
+    handleParticles();
     //Representa las coordenadas del personaje, los saltos y su dibujo
     bird.update();
     bird.draw();
-    handleParticles();
+    //LLama a la funcion para las colisiones
+    handleCollisions();
+    //Me corta el juego si la funcion anterior da True
+    if(handleCollisions()) return;
     //Sirve para el loop de la animacion
     requestAnimationFrame(animate);
     //Hace que haga un salto al estar quieto
@@ -54,10 +62,12 @@ window.addEventListener('keyup', (e) => {
     }
 });
 
+//HANDLES
 //Funcion que agrega las particulas simulando humo al personaje
 function handleParticles(){
     particlesArray.unshift(new Particle);
 
+    //Crea los circulos que simulan ser humo y va actualizando su ubicacion
     for(i=0; i<particlesArray.length; i++) {
         particlesArray[i].update();
         particlesArray[i].draw();
@@ -72,16 +82,39 @@ function handleParticles(){
 }
 
 function handleObstacles(){
+    //Esta condicion me da la distancia entre los obstaculos
     if(frame%80 ===0){
         obstaclesArray.unshift(new Obstacle());
     }
 
+    //Va creando los obstaculos
     for (let i= 0; i < obstaclesArray.length; i++) {
         obstaclesArray[i].update();
     }
 
-    if(obstaclesArray.length>10){
+    if(obstaclesArray.length>20){
         obstaclesArray.pop(obstaclesArray[0]);
+    }
+}
+
+function handleCollisions(){
+    for(let i=0; i < obstaclesArray.length; i++){
+        console.log(obstaclesArray);
+        if ((bird.x < obstaclesArray[i].x + obstaclesArray[i].width) 
+            && (bird.x + bird.width > obstaclesArray[i].x) && 
+          //Controla las colisiones en Top
+          ((bird.y < 0 + obstaclesArray[i].top && bird.y + bird.height > 0) ||
+          //Controla las colisiones en Bottom
+          (bird.y > canvas.height - obstaclesArray[i].bottom &&
+            bird.y + bird.height < canvas.height))){
+                //Collision detectada
+                ctx.drawImage(bang, bird.x, bird.y, 50, 50); //Image
+                //Me pone un texto de Game over en la pantalla
+                ctx.font = "38px Georgia";
+                ctx.fillStyle = 'black';
+                ctx.fillText('Game Over, your Score is: ' + score, 160, canvas.height/2 -10);
+                return true;
+            }
     }
 }
 
