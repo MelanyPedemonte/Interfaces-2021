@@ -10,7 +10,7 @@ let angle = 0; // Angulo
 let hue = 0; //Lo uso para modificar el color del particle
 let frame = 0;//Lo uso para crear los obstaculos
 let score = 0; //Puntaje
-let gameSpeed = 2; //Velocidad del juego
+let gameSpeed = 3; //Velocidad del juego
 
 //Creamos el personaje
 const bird = new Bird();
@@ -25,6 +25,15 @@ const obstaclesArray = [];
 const bang = new Image();
 bang.src = './Animaciones/bang.png'
 
+//Gradiente para el puntaje
+const gradient = ctx.createLinearGradient(0, 0, 0, 70);
+gradient.addColorStop('0.4', '#fff');
+gradient.addColorStop('0.5', '#000');
+gradient.addColorStop('0.55', '#fff');
+gradient.addColorStop('0.6', '#000');
+gradient.addColorStop('0.9', '#fff');
+
+//Llama a los metodos para la animacion del juego
 function animate(){
     //Limpia el personaje
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -33,6 +42,11 @@ function animate(){
     //Representa las coordenadas del personaje, los saltos y su dibujo
     bird.update();
     bird.draw();
+    //Me pone un texto en el canvas para llevar el puntaje del personaje
+    ctx.fillStyle = gradient;
+    ctx.font = '25px Georgia';
+    ctx.strokeText("Score: "+ score, 680, 40);
+    ctx.fillText("Score: " + score, 680, 40);
     //LLama a la funcion para las colisiones
     handleCollisions();
     //Me corta el juego si la funcion anterior da True
@@ -83,7 +97,7 @@ function handleParticles(){
 
 function handleObstacles(){
     //Esta condicion me da la distancia entre los obstaculos
-    if(frame%80 ===0){
+    if(frame%60 ===0){
         obstaclesArray.unshift(new Obstacle());
     }
 
@@ -110,9 +124,10 @@ function handleCollisions(){
                 //Collision detectada
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50); //Image
                 //Me pone un texto de Game over en la pantalla
-                ctx.font = "38px Georgia";
-                ctx.fillStyle = 'black';
-                ctx.fillText('Game Over, your Score is: ' + score, 160, canvas.height/2 -10);
+                ctx.fillStyle = 'gray';
+                ctx.font = "30px Georgia";
+                ctx.strokeText('Game Over, your Score is: '+ score, 220, canvas.height/2- 20);
+                ctx.fillText('Game Over, your Score is: ' + score, 220, canvas.height/2- 20);
                 return true;
             }
     }

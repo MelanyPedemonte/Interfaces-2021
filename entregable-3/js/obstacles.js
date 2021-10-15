@@ -5,6 +5,7 @@ class Obstacle{
         this.x = canvas.width;
         this.width = 30;
         this.color = 'hsla(' + hue + ', 100%, 50%, 0.9)';
+        this.counted = false;
     }
 
     draw(){
@@ -15,6 +16,10 @@ class Obstacle{
 
     update(){
         this.x -= gameSpeed;
+        if(!this.counted && this.x - bird.x){
+            score++;
+            this.counted = true;
+        }
         this.draw();
     }
 
