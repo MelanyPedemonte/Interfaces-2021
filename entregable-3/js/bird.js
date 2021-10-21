@@ -5,11 +5,16 @@ class Bird {
         this.y = 200;
         //Velocidad
         this.vy = 0;
+        //Ancho y alto original de la imagen
+        this.originalWidth = 670;
+        this.originalHeight = 800;
         //Ancho y alto del personaje
-        this.width = 20;
-        this.height = 20;
+        this.width = this.originalWidth/20;
+        this.height = this.originalHeight/10;
         //La velocidad con la que cae el personaje
         this.weight = 1;
+        //frames
+        this.frameX = 0;
     }
 
     //Metodo para calcular altura y velocidad
@@ -39,11 +44,17 @@ class Bird {
 
     flap(){
         this.vy -=2;
+        if(this.frameX >= 3){
+            this.frameX = 0;
+        }else{
+            this.frameX++;
+        }
     }
 
     draw(){
         ctx.fillStyle = '#e17055';
-        ctx.fillRect (this.x, this.y, this.width, this.height);
+        //ctx.fillRect (this.x, this.y, this.width, this.height);
+        ctx.drawImage(pajaro, this.frameX * this.originalWidth, 0, this.originalWidth, this.originalHeight, this.x - 20, this.y - 12, this.width * 1.7, this.height * 1.7);
     }
 }
 

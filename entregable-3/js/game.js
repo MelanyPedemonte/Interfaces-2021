@@ -1,8 +1,7 @@
-//Creacion del canvas
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = 800;
-canvas.height = 400;
+canvas.height = 900;
 
 //Variables para el uso del juego utilizadas en las distintas clases
 let spacePressed = false; //Espacio presionado
@@ -14,6 +13,9 @@ let gameSpeed = 3; //Velocidad del juego
 
 //Creamos el personaje
 const bird = new Bird();
+const pajaro = new Image();
+pajaro.src = './Animaciones/bird.png'
+
 
 //Particle
 const particlesArray = [];
@@ -25,6 +27,26 @@ const obstaclesArray = [];
 const bang = new Image();
 bang.src = './Animaciones/bang.png'
 
+//imagenes de fondo
+const layer5 = new Image();
+layer5.src = './Animaciones/background/layer07_Sky.png';
+const layer4 = new Image();
+layer4.src = './Animaciones/background/layer06_Rocks.png';
+const layer3 = new Image();
+layer3.src = './Animaciones/background/layer05_Clouds.png'; 
+const layer2 = new Image();
+layer2.src = './Animaciones/background/layer03_Hills_1.png';
+const layer1 = new Image();
+layer1.src = './Animaciones/background/layer01_Ground.png';
+
+const sky = new Background(layer5,0.1);
+const rocks = new Background(layer4,0.2);
+const clouds = new Background(layer3,0.3);
+const hills = new Background(layer2,0.5);
+const ground = new Background(layer1,1);
+
+const imageArray =[sky, rocks, clouds, hills, ground];
+
 //Gradiente para el puntaje
 const gradient = ctx.createLinearGradient(0, 0, 0, 70);
 gradient.addColorStop('0.4', '#fff');
@@ -33,10 +55,19 @@ gradient.addColorStop('0.55', '#fff');
 gradient.addColorStop('0.6', '#000');
 gradient.addColorStop('0.9', '#fff');
 
+let xb=0;
+let xb2= 1280;
+
 //Llama a los metodos para la animacion del juego
 function animate(){
     //Limpia el personaje
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //imagenes fondo
+    imageArray.forEach(object => {
+        object.update();
+        object.draw();
+    });
+   // handleBackround();
     handleObstacles();
     handleParticles();
     //Representa las coordenadas del personaje, los saltos y su dibujo
@@ -74,6 +105,7 @@ window.addEventListener('keyup', (e) => {
     if (e.code === "Space") {
         spacePressed = false;
     }
+    bird.frameX = 0;
 });
 
 //HANDLES
@@ -131,6 +163,21 @@ function handleCollisions(){
                 return true;
             }
     }
+}
+
+function handleBackround(){
+    if(bg.x1 <= -bg.width + gameSpeed){
+        bg.x1 = bg.width;
+    }else{
+        bg.x1 -= gameSpeed;
+    };
+    if(bg.x2 <= -bg.width + gameSpeed){
+        bg.x2 = bg.width;
+    }else{
+        bg.x2 -= gameSpeed;
+    }
+    ctx.drawImage(backgroung, bg.x1, bg.y, bg.width, bg.height);
+    ctx.drawImage(backgroung, bg.x2, bg.y, bg.width, bg.height);
 }
 
 
