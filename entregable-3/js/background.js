@@ -13,10 +13,10 @@ class Background{
     update(){
         this.speed = gameSpeed * this.speedM;
         if(this.x <= -this.width){
-            this.x = this.width + this.x - this.speed;
+            this.x = this.width + this.x2 - this.speed;
         }
         if(this.x2 <= -this.width){
-            this.x2 = this.width + this.x2 - this.speed;
+            this.x2 = this.width + this.x - this.speed;
         }
         this.x = Math.floor(this.x - this.speed);
         this.x2 = Math.floor(this.x2 - this.speed);
