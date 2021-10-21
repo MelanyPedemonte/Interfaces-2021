@@ -1,9 +1,9 @@
 class Obstacle{
     constructor(){
-        this.top = (Math.random() * canvas.height/3) + 40;
-        this.bottom = (Math.random() * canvas.height/3) + 40;
+        this.top = (Math.random() * canvas.height/3) + 50;
+        this.bottom = (Math.random() * canvas.height/3) + 50;
         this.x = canvas.width;
-        this.width = 30;
+        this.width = 50;
         this.color = 'hsla(' + hue + ', 100%, 50%, 0.9)';
         this.counted = false;
     }

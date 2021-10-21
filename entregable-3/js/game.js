@@ -156,7 +156,7 @@ function handleCollisions(){
                 //Collision detectada
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50); //Image
                 //Me pone un texto de Game over en la pantalla
-                ctx.fillStyle = 'gray';
+                ctx.fillStyle = 'black';
                 ctx.font = "30px Georgia";
                 ctx.strokeText('Game Over, your Score is: '+ score, 220, canvas.height/2- 20);
                 ctx.fillText('Game Over, your Score is: ' + score, 220, canvas.height/2- 20);
