@@ -6,49 +6,12 @@ body{
 }
 
 
-#game{
+#backround{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     background: url(../images/background/layer05_Sky.png);
     background-position: center left;
-}
-
-#score{
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    color: wheat;
-    font-size: 30px;
-    font-weight: normal;
-}
-
-#gameover{
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    color: wheat;
-    font-size: 30px;
-    font-weight: normal;
-}
-
-#block{
-    width: 45px;
-    height: 100vh;
-    background: url(../images/block.png);
-    background-position: center;
-    background-size: contain;
-    position: relative;
-}
-
-#hole{
-    width: 46px;
-    height: 193px;
-    background: url(../images/hole.png);
-    background-size: contain;
-    position: relative;
-    top: -500px;
-    background-repeat: no-repeat;
 }
 
 #bird{
@@ -63,15 +26,6 @@ body{
     z-index: 100;
 }
 
-
-@keyframes blockAnimation{
-    0%{
-        left: 100vw;
-    }
-    100%{
-        left: -50px;
-    }
-}
 
 @keyframes fly {
     0% {
