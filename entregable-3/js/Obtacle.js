@@ -1,17 +1,16 @@
-class Obstaculo {
-    constructor(posicionX, posicionY){ //constructor default de la clase obstaculo
-        this.div = document.getElementById("obstaculo");
-        this.ancho = this.div.offsetWidth;
-        this.alto = this.div.offsetHeight;
-        this.posicionX = this.div.style.left = posicionX + "px";
-        this.posicionY = this.div.style.top = posicionY + "px";
-        this.divImage = this.div.style.background = "url('../images/block.png') left center";
+class Obstacle {
+    constructor(x, y){ 
+        this.div = document.getElementById("obstacle");
+        this.width = this.div.offsetWidth;
+        this.height = this.div.offsetHeight;
+        this.x = this.div.style.left = x + "px";
+        this.y = this.div.style.top = y + "px";
+        this.image = this.div.style.background = "url('./images/block.png') left center";
     }
 
     
-    //funcion para detectar colision despues lo vemos
     colision(x,y){
-        if(x>=this.posicionX && x<=this.posicionX+this.ancho && y>=this.posicionY && y<=this.posicionY+this.alto){
+        if(x>=this.x && x<=this.x+this.width && y>=this.y && y<=this.y+this.height){
             return true;
         }
         else{

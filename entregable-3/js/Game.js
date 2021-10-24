@@ -1,36 +1,39 @@
-class Juego{
-    constructor(personaje, obstaculo){
-        this.personaje = personaje;
-        this.obstaculo = obstaculo;
-        this.gemas = [];
+class Game{
+    constructor(bird, obstacle){
+        this.bird = bird;
+        this.obstacle = obstacle;
+        this.stars = [];
     }
 
     initGame(){
         this.acciones();
+        this.generateObstacles();
     }
 
+    generateObstacles(){
+        let max = 2;
+        let quantiy = Math.floor(Math.random() * max);
+        for (let index = 0; index < quantiy; index++) {
+            let obs = new Obstacle(200, 20);
+        }
+    }
+ 
     acciones(){
         document.addEventListener('keydown', (e)=>{
-            console.log(e.keyCode);
-            if(e.keyCode == 38){ 
-                this.personaje.jump();      
+            if(e.keyCode == 32){ 
+                this.bird.fly();      
             }
-            if (this.obstaculo.colision(this.personaje.getAncho(), this.personaje.getAlto())){ //esto hay que verlo bien
+          /**   if (this.obstacle.colision(this.bird.getWidth(), this.bird.getHeight())){ 
                 this.personaje.die();
-            }
-        })
+                console.log("DIE");
+                this.gameover();
+            }*/
+        });
         
-        
-        document.addEventListener('keyup', (e)=>{
-            if(e.keyCode == 38){ /* arrow up */ 
-               this.personaje.walk();
-            }
-            // if (e.keyCode == 32){ //este seria para levantarse...
-            //     character.classList.add("character");
-            //     character.classList.remove("character-attack");
-            // }
-        })
-        
-    }
+   }
+
+   gameover(){
+       alert("game over");
+   }
 
 }

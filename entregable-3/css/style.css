@@ -5,13 +5,48 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-
-#backround{
+/** fondo parallax */
+.layer{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: url(../images/background/layer05_Sky.png);
-    background-position: center left;
+    background-size: cover;
+    background-repeat: repeat-x;
+    position: absolute;
+}
+
+#layer05{
+    background-image: url(../images/background/layer05_Sky.png);
+    animation: scroll 10s infinite linear;
+}
+
+#layer04{
+    background-image: url(../images/background/layer04_Rocks.png);
+    animation: scroll 8s infinite linear;
+}
+
+#layer03{
+    background-image: url(../images/background/layer03_Clouds.png);
+    animation: scroll 6s infinite linear;
+}
+
+#layer02{
+    background-image: url(../images/background/layer02_Hills_1.png);
+    animation: scroll 4s infinite linear;
+}
+
+#layer01{
+    background-image: url(../images/background/layer01_Ground.png);
+    animation: scroll 2s infinite linear;
+}
+
+@keyframes scroll {
+    0% {
+        background-position: 0vh;
+    }
+    100% {
+        background-position: -100vw;
+    }
 }
 
 #bird{
@@ -22,7 +57,7 @@ body{
     animation: fly 0.5s steps(4) infinite;
     position: absolute;
     top: 40vh;
-    left: 30vw;
+    left: 20vw;
     z-index: 100;
 }
 
@@ -33,5 +68,22 @@ body{
     }
     100% {
         background-position: -2000px;
+    }
+}
+
+/** obstaculos */
+#obstacle{
+    width: 45px;
+    height: 100vh;
+    position: relative;
+    animation: blockAnimation 5s infinite linear;
+}
+
+@keyframes blockAnimation{
+    0%{
+        left: 100vw;
+    }
+    100%{
+        left: -50px;
     }
 }
