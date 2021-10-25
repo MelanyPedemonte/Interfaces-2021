@@ -20,7 +20,7 @@ class Game{
  
     acciones(){
         document.addEventListener('keydown', (e)=>{
-            if(e.keyCode == 32){ 
+            if(e.code === "Space"){ 
                 this.bird.fly();      
             }
           /**   if (this.obstacle.colision(this.bird.getWidth(), this.bird.getHeight())){ 

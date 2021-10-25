@@ -1,9 +1,9 @@
 class Bird {
     constructor(){
         this.div = document.querySelector("#bird");
-        this.width = this.div.offsetWidth ; 
-        this.height = this.div.offsetHeight; 
-        this.life = 100;
+        this.width = this.div.offsetWidth ; //Compensa el ancho
+        this.height = this.div.offsetHeight; //Compensa el alto
+        this.life = 100; //??????
         this.score = 1; 
         this.gravity();
     }
@@ -27,9 +27,11 @@ class Bird {
     gravity() {
         let bird = document.querySelector( '#bird' );
         setInterval(function(){
-            var birdTop = parseInt(window.getComputedStyle(bird).getPropertyValue("top"));
+            //El método getComputedStyle () obtiene todas las propiedades y valores CSS reales (calculados) del elemento especificado.
+            //método getComputedStyle () en JavaScript, que obtiene todos los atributos y valores del elemento especificado CSS real (calculado).
+            let birdTop = parseInt(window.getComputedStyle(bird).getPropertyValue("top"));
             bird.style.top = (birdTop+3)+"px";
-        },10);
+        },15);
     }
 
     fly(){

@@ -5,56 +5,54 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-/** fondo parallax */
+/** Fondo parallax */
+@keyframes scroll {
+    0%{background-position-x: 0px;}
+    100%{background-position-x: -1920px;}
+}
+
 .layer{
-    width: 100vw;
+    min-height: 300px;
     height: 100vh;
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: repeat-x;
+    width: 100vw;
     position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: repeat-x;
+    background-size: cover;
 }
 
 #layer05{
     background-image: url(../images/background/layer05_Sky.png);
-    animation: scroll 10s infinite linear;
+    animation: scroll 5s infinite linear;
 }
 
 #layer04{
     background-image: url(../images/background/layer04_Rocks.png);
-    animation: scroll 8s infinite linear;
+    animation: scroll 15s infinite linear;
 }
 
 #layer03{
     background-image: url(../images/background/layer03_Clouds.png);
-    animation: scroll 6s infinite linear;
+    animation: scroll 25s infinite linear;
 }
 
 #layer02{
     background-image: url(../images/background/layer02_Hills_1.png);
-    animation: scroll 4s infinite linear;
+    animation: scroll 30s infinite linear;
 }
 
 #layer01{
     background-image: url(../images/background/layer01_Ground.png);
-    animation: scroll 2s infinite linear;
-}
-
-@keyframes scroll {
-    0% {
-        background-position: 0vh;
-    }
-    100% {
-        background-position: -100vw;
-    }
+    animation: scroll 50s infinite linear;
 }
 
 #bird{
-    width: 46px;
-    height: 40px;
+    width: 50px;
+    height: 44px;
     background: url('../images/bird.png') left center;
     background-size: cover;
-    animation: fly 0.5s steps(4) infinite;
+    animation: fly 0.2s steps(4) infinite;
     position: absolute;
     top: 40vh;
     left: 20vw;
@@ -74,9 +72,9 @@ body{
 /** obstaculos */
 #obstacle{
     width: 45px;
-    height: 100vh;
+    height: 300vh;
     position: relative;
-    animation: blockAnimation 5s infinite linear;
+    animation: blockAnimation 4s infinite linear;
 }
 
 @keyframes blockAnimation{
