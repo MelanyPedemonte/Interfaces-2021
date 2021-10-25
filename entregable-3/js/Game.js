@@ -14,7 +14,7 @@ class Game{
         let max = 2;
         let quantiy = Math.floor(Math.random() * max);
         for (let index = 0; index < quantiy; index++) {
-            let obs = new Obstacle(200, 20);
+            let obs = new Obstacle(0, 0);
         }
     }
  

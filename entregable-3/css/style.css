@@ -70,9 +70,14 @@ body{
 }
 
 /** obstaculos */
-#obstacle{
-    width: 45px;
-    height: 300vh;
+#obstacle-top{
+    width: 80px;
+    position: relative;
+    animation: blockAnimation 4s infinite linear;
+}
+
+#obstacle-bottom{
+    width: 80px;
     position: relative;
     animation: blockAnimation 4s infinite linear;
 }
