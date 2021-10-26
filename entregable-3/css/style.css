@@ -73,6 +73,8 @@ body{
 #obstacle-top{
     width: 80px;
     position: relative;
+    background-position: center;
+    background-size: contain;
     animation: blockAnimation 4s infinite linear;
 }
 
@@ -89,4 +91,8 @@ body{
     100%{
         left: -50px;
     }
+}
+
+#gameOver{
+    display: none;
 }
