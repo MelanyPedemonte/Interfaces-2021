@@ -76,47 +76,21 @@ body{
     width: 150px; 
     height: 100px; 
     /**background: url('../images/Stone.png');*/
-    animation: rodar 5.5s  steps(3) infinite ;
+    animation: moveObstacle 4s infinite linear, rotate 7s infinite linear;
     position: absolute;
 }
-  
-  @keyframes rodar{
-    0%{
-      left: 1600px;
-      background-color: 0;}
-      10%{
-        left: 1300px;
-      }  
-      20%{
-        left: 1100px;
-      } 
-      30%{
-        left: 900px;
-      } 
-      40%{
-        left: 700px;
-      } 
-      50%{
-        left: 500px;
-      } 
-      60%{
-        left: 400px;
-      } 
-      70%{
-        left: 200px;
-      }
-      80%{
-        left: 100px;
-      }
-      90%{
-        left: -100px;
-      }
-      
-    100%{
-      left: -800px;
-      background-color: 287px;}
-  }
 
+@keyframes moveObstacle {
+    0% { left: 100% }
+    100% { left: 0% }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
 /**Game Over*/
 #gameOver{
     display: none;
