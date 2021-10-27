@@ -1,39 +1,25 @@
 class Game{
     constructor(bird, obstacle){
         this.bird = bird;
-        this.obstacle = obstacle;
-        this.stars = [];
+        this.obstaculos = [];
+        this.obstaculos.push(obstacle);
     }
 
     initGame(){
-        this.acciones();
-        this.generateObstacles();
+        this
+        this.game();
     }
 
-    generateObstacles(){
-        let max = 2;
-        let quantiy = Math.floor(Math.random() * max);
-        for (let index = 0; index < quantiy; index++) {
-            let obs = new Obstacle(0, 0);
-        }
-    }
- 
-    acciones(){
+    game(){
         document.addEventListener('keydown', (e)=>{
             if(e.code === "Space"){ 
                 this.bird.fly();      
             }
-          /**   if (this.obstacle.colision(this.bird.getWidth(), this.bird.getHeight())){ 
-                this.personaje.die();
-                console.log("DIE");
-                this.gameover();
-            }*/
-        });
-        
+            if (this.obstaculos[0].colision(this.bird.getPosicionX, this.bird.getPosicionY, this.bird.getWidth, this.bird.getHeight)){ 
+                alert("game over");
+            }
+        });    
    }
 
-   gameover(){
-       alert("game over");
-   }
 
 }

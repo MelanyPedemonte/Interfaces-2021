@@ -1,27 +1,20 @@
 class Obstacle {
-    constructor(x, y){ 
-        this.div1 = document.getElementById("obstacle-top");
-        this.div2 = document.getElementById("obstacle-bottom");
-        this.width = this.div1.offsetWidth;
-        console.log(this.div1.offsetHeight);
-        this.height = this.div1.style.height = 100 + "px";
-        this.height = this.div2.style.height = 300 + "px";
-        this.x = this.div1.style.left = x + "px";
-        this.y = this.div1.style.top = 0 + "px";
-        this.x = this.div2.style.left = x + "px";
-        this.y = this.div2.style.top = 400 + "px";
-        this.image = this.div1.style.background = "url('./images/block.png') left center";
-        this.image = this.div2.style.background = "url('./images/block.png') left center";
+    constructor(posicionX, posicionY){ 
+        this.div = document.getElementById("obstacle");
+        this.width = this.div.offsetWidth;
+        this.height = this.div.offsetHeight;
+        this.posicionX = this.div.style.left = posicionX + "px";
+        this.posicionY = this.div.style.top = posicionY + "px";
+        this.divImage = this.div.style.background = "url('./images/Stone.png') left center";
     }
 
-    
-    colision(x,y){
-        if(x>=this.x && x<=this.x+this.width && y>=this.y && y<=this.y+this.height){
+    colision(birdX, birdY, birdWidth, birdHeight){
+        if(birdX < this.posicionX + this.width && birdX + birdWidth > this.posicionX && 
+              birdY < this.posicionY + this.height && birdHeight + birdHeight > this.posicionY){
             return true;
-        }
-        else{
+        }else{
             return false;
-        }
+        } 
     }
 
 }

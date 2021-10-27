@@ -47,6 +47,8 @@ body{
     animation: scroll 50s infinite linear;
 }
 
+/** bird */
+
 #bird{
     width: 50px;
     height: 44px;
@@ -70,29 +72,52 @@ body{
 }
 
 /** obstaculos */
-#obstacle-top{
-    width: 80px;
-    position: relative;
-    background-position: center;
-    background-size: contain;
-    animation: blockAnimation 4s infinite linear;
+#obstacle{
+    width: 150px; 
+    height: 100px; 
+    /**background: url('../images/Stone.png');*/
+    animation: rodar 5.5s  steps(3) infinite ;
+    position: absolute;
 }
-
-#obstacle-bottom{
-    width: 80px;
-    position: relative;
-    animation: blockAnimation 4s infinite linear;
-}
-
-@keyframes blockAnimation{
+  
+  @keyframes rodar{
     0%{
-        left: 100vw;
-    }
+      left: 1600px;
+      background-color: 0;}
+      10%{
+        left: 1300px;
+      }  
+      20%{
+        left: 1100px;
+      } 
+      30%{
+        left: 900px;
+      } 
+      40%{
+        left: 700px;
+      } 
+      50%{
+        left: 500px;
+      } 
+      60%{
+        left: 400px;
+      } 
+      70%{
+        left: 200px;
+      }
+      80%{
+        left: 100px;
+      }
+      90%{
+        left: -100px;
+      }
+      
     100%{
-        left: -50px;
-    }
-}
+      left: -800px;
+      background-color: 287px;}
+  }
 
+/**Game Over*/
 #gameOver{
     display: none;
 }
