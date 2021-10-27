@@ -1,8 +1,8 @@
 class Game{
     constructor(bird, obstacle){
         this.bird = bird;
-        this.obstaculos = [];
-        this.obstaculos.push(obstacle);
+        this.obstaculos = obstacle;
+        //this.obstaculos.push(obstacle);
     }
 
     initGame(){
@@ -15,11 +15,18 @@ class Game{
             if(e.code === "Space"){ 
                 this.bird.fly();      
             }
-            if (this.obstaculos[0].colision(this.bird.getPosicionX, this.bird.getPosicionY, this.bird.getWidth, this.bird.getHeight)){ 
+            let b = document.getElementById("bird");
+            let o = document.getElementById("obstacle");
+            if (this.hayColision(b, o)){ 
                 alert("game over");
             }
         });    
    }
+
+    hayColision(x1, x2) {
+        return (x1.offsetLeft < x2.offsetLeft + x2.offsetWidth && x1.offsetTop < x2.offsetTop + x2.offsetHeight &&
+        x1.offsetLeft + x1.offsetWidth > x2.offsetLeft && x1.offsetHeight + x1.offsetTop > x2.offsetTop);
+    }   
 
 
 }

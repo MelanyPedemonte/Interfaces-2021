@@ -8,13 +8,4 @@ class Obstacle {
         this.divImage = this.div.style.background = "url('./images/Stone.png') left center";
     }
 
-    colision(birdX, birdY, birdWidth, birdHeight){
-        if(birdX < this.posicionX + this.width && birdX + birdWidth > this.posicionX && 
-              birdY < this.posicionY + this.height && birdHeight + birdHeight > this.posicionY){
-            return true;
-        }else{
-            return false;
-        } 
-    }
-
 }
