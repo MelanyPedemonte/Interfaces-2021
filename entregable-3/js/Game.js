@@ -1,8 +1,8 @@
 class Game{
     constructor(bird, obstacle){
         this.bird = bird;
-        this.obstaculos = obstacle;
-        //this.obstaculos.push(obstacle);
+        this.obstacle = obstacle;
+        this.isOver = false;
     }
 
     initGame(){
@@ -11,15 +11,26 @@ class Game{
 
     game(){
         document.addEventListener('keydown', (e)=>{
-            if(e.code === "Space"){ 
-                this.bird.fly();      
-            }
+            if(!this.isOver){
+                if(e.code === "Space"){ 
+                   this.bird.fly();      
+                };
+            };
             let birdDiv = document.getElementById("bird");
-            if (this.obstaculos.hayColision(birdDiv)){ 
-                alert("game over");
-            }
+            if (this.obstacle.hayColision(birdDiv)){ 
+                this.gameOver()
+            };
         });    
-   } 
+    } 
+
+    gameOver(){
+        this.isOver = true;
+        this.bird.dead();
+        let obstacle = document.getElementById("obstacle");
+        obstacle.style.display = "none";
+        let game = document.getElementById("gameOver");
+        game.style.display = "block";
+    }
 
 
 }

@@ -50,24 +50,23 @@ body{
 /** bird */
 
 #bird{
-    width: 50px;
+    width: 52px;
     height: 44px;
     background: url('../images/bird.png') left center;
-    background-size: cover;
-    animation: fly 0.2s steps(4) infinite;
+    background-size: cover !important;
+    animation: fly 0.2s steps(2) infinite;
     position: absolute;
     top: 40vh;
     left: 20vw;
     z-index: 100;
 }
 
-
 @keyframes fly {
     0% {
         background-position: 0px;
     }
     100% {
-        background-position: -2000px;
+        background-position: 100px;
     }
 }
 
@@ -93,5 +92,7 @@ body{
   
 /**Game Over*/
 #gameOver{
+    background: wheat;
+    position: absolute;
     display: none;
 }

@@ -54,4 +54,8 @@ class Bird {
             jumpCount++;
         },10);
     }
+
+    dead(){
+        this.bird.style.background = "url('./images/birdDie.png') left center";
+    }
 }
