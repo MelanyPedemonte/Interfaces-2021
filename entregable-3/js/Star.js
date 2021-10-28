@@ -8,12 +8,8 @@ class Star{
         this.divImage = this.div.style.background = "url('./images/star.png') left center";
     }  
 
-    colision(x,y){
-        if(x>=this.x && x<=this.x+this.width && y>=this.y && y<=this.y+this.height){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+    hayColision(x1) {
+        return (x1.offsetLeft < this.div.offsetLeft + this.div.offsetWidth && x1.offsetTop < this.div.offsetTop + this.div.offsetHeight &&
+        x1.offsetLeft + x1.offsetWidth > this.div.offsetLeft && x1.offsetHeight + x1.offsetTop > this.div.offsetTop);
+    }  
 }

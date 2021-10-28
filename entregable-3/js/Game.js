@@ -1,8 +1,10 @@
 class Game{
-    constructor(bird, obstacle){
+    constructor(bird, obstacle, star){
         this.bird = bird;
         this.obstacle = obstacle;
+        this.star = star;
         this.isOver = false;
+        this.score=0;
     }
 
     initGame(){
@@ -18,7 +20,11 @@ class Game{
             };
             let birdDiv = document.getElementById("bird");
             if (this.obstacle.hayColision(birdDiv)){ 
-                this.gameOver()
+                this.gameOver();
+            };
+            if (this.star.hayColision(birdDiv)){ 
+                //animacion a la estrella y que desaparece
+                this.score = this.score + 10;
             };
         });    
     } 
@@ -28,6 +34,8 @@ class Game{
         this.bird.dead();
         let obstacle = document.getElementById("obstacle");
         obstacle.style.display = "none";
+        let puntos = document.getElementById("score");
+        puntos.innerHTML = this.score;
         let game = document.getElementById("gameOver");
         game.style.display = "block";
     }

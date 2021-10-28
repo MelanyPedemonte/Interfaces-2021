@@ -89,6 +89,17 @@ body{
         transform: rotate(360deg);
     }
 }
+
+/**star*/
+#star{
+    width: 60px; 
+    height: 60px; 
+    /**background: url('../images/Stone.png');*/
+    animation:  moveObstacle 4s infinite linear;
+    position: absolute;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
   
 /**Game Over*/
 #gameOver{
