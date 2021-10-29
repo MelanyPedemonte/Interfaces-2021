@@ -71,13 +71,22 @@ body{
 }
 
 /** obstaculos */
-#obstacle{
+#obstacle-top{
+    width: 150px; 
+    height: 100px; 
+    /**background: url('../images/Stone.png');*/
+    animation: moveObstacle 3.5s infinite linear, rotate 7s infinite linear;
+    position: absolute;
+}
+
+#obstacle-bottom{
     width: 150px; 
     height: 100px; 
     /**background: url('../images/Stone.png');*/
     animation: moveObstacle 3s infinite linear, rotate 7s infinite linear;
     position: absolute;
 }
+
 
 @keyframes moveObstacle {
     0% { left: 100% }
