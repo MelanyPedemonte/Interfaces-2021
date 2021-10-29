@@ -15,7 +15,8 @@ class Game{
         document.addEventListener('keydown', (e)=>{
             if(!this.isOver){
                 if(e.code === "Space"){ 
-                   this.bird.fly();      
+                   this.bird.fly();
+                   this.score = this.score + 5;      
                 };
             };
             let birdDiv = document.getElementById("bird");
@@ -26,13 +27,10 @@ class Game{
                 //animacion a la estrella y que desaparece
                 let star = document.getElementById("star");
                 star.style.display = 'none';
-              //  this.star.div.style.display = 'none;'
-                this.score = this.score + 10;
-                        
-                setTimeout(_=>star.style.display = 'block', 100);
-
+                this.score = this.score + 100;
+                setTimeout(_=>star.style.display = 'block', 2000);
             };
-        });    
+        });  
     } 
 
     gameOver(){

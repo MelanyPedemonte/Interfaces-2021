@@ -94,16 +94,31 @@ body{
 #star{
     width: 60px; 
     height: 60px; 
-    /**background: url('../images/Stone.png');*/
     animation:  moveObstacle 4s infinite linear;
     position: absolute;
     background-repeat: no-repeat !important;
     background-size: contain !important;
+    opacity: 0.8;
 }
   
 /**Game Over*/
 #gameOver{
-    background: wheat;
     position: absolute;
     display: none;
+    top: 200px;
+    left: 550px;
+    color: white;
+    height: 100%;
+    text-align: center;
+}
+
+#gameOver button{
+    color: white;
+    background-color: darkcyan;
+    border-radius: 30px;
+    outline: 2px solid darkcyan;
+    outline-offset: 2px;
+    padding: 5px;
+    padding-inline-end: 30px;
+    padding-inline-start: 30px;
 }

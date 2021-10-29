@@ -14,8 +14,8 @@ class Star{
     }  
 
     showStar() {
-        if ( this.div.style.display !== 'none' ) return
-        this.div.style.display = ''
-        this.div.style.top = `${ getRandomNumber( 20, 70 ) }%`
+        if ( this.div.style.display !== 'none' ) return;
+        this.div.style.display = '';
+        this.div.style.top = `${ getRandomNumber( 40, 70 ) }%`;
     }
 }
