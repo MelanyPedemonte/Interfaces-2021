@@ -12,4 +12,10 @@ class Star{
         return (x1.offsetLeft < this.div.offsetLeft + this.div.offsetWidth && x1.offsetTop < this.div.offsetTop + this.div.offsetHeight &&
         x1.offsetLeft + x1.offsetWidth > this.div.offsetLeft && x1.offsetHeight + x1.offsetTop > this.div.offsetTop);
     }  
+
+    showStar() {
+        if ( this.div.style.display !== 'none' ) return
+        this.div.style.display = ''
+        this.div.style.top = `${ getRandomNumber( 20, 70 ) }%`
+    }
 }

@@ -24,7 +24,13 @@ class Game{
             };
             if (this.star.hayColision(birdDiv)){ 
                 //animacion a la estrella y que desaparece
+                let star = document.getElementById("star");
+                star.style.display = 'none';
+              //  this.star.div.style.display = 'none;'
                 this.score = this.score + 10;
+                        
+                setTimeout(_=>star.style.display = 'block', 100);
+
             };
         });    
     } 
