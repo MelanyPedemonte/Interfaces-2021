@@ -6,4 +6,4 @@ game.initGame();
 setInterval(function(){
     let inicio = document.getElementById("reglas");
     inicio.style.display = "none";
-},5000);
+},4000);
