@@ -135,3 +135,15 @@ body{
     padding-inline-end: 30px;
     padding-inline-start: 30px;
 }
+
+#reglas{
+    position: absolute;
+    left: 810px;
+    top:400px;
+    background-color: yellowgreen;
+    color: white;
+    padding-block-end: 20px;
+    padding-inline-start: 30px;
+    padding-inline-end: 30px;
+    opacity: 0.8;
+}
