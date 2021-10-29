@@ -35,7 +35,10 @@ class Bird {
             //El método getComputedStyle () obtiene todas las propiedades y valores CSS reales (calculados) del elemento especificado.
             //método getComputedStyle () en JavaScript, que obtiene todos los atributos y valores del elemento especificado CSS real (calculado).
             let birdTop = parseInt(window.getComputedStyle(this.bird).getPropertyValue("top"));
-            this.bird.style.top = (birdTop+3)+"px";
+            //this.bird.style.top = (birdTop+3)+"px";
+            if(birdTop < 590){
+                this.bird.style.top = (birdTop+3)+"px";
+            }
         },15);
     }
 
