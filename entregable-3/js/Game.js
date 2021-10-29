@@ -16,7 +16,7 @@ class Game{
             if(!this.isOver){
                 if(e.code === "Space"){ 
                    this.bird.fly();
-                  // this.score = this.score + 5;      
+                   this.score = this.score + 5;    
                 };
             };
             let birdDiv = document.getElementById("bird");
@@ -30,6 +30,8 @@ class Game{
                 this.score = this.score + 100;
                 setTimeout(_=>this.starModify(star), 2000);
             };
+            let puntos= document.getElementById("puntaje");
+            puntos.innerHTML = "Score " + this.score;
         });  
     } 
 
