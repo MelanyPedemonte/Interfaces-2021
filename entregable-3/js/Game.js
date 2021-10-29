@@ -54,7 +54,7 @@ class Game{
         puntos.innerHTML = this.score;
         let game = document.getElementById("gameOver");
         game.style.display = "block";
+        let punt = document.getElementById("scorePantalla");
+        punt.style.display ="none";
     }
-
-
 }
