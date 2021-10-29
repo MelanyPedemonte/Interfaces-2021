@@ -6,13 +6,12 @@ body{
 }
 
 /** Fondo parallax */
-@keyframes scroll {
-    0%{background-position-x: 0px;}
-    100%{background-position-x: -1920px;}
-}
+@keyframes scroll {  
+    0% { background-position: 2765px 100%;} 
+    100% {background-position: 550px 100%; } 
+  }
 
 .layer{
-    min-height: 300px;
     height: 100vh;
     width: 100vw;
     position: absolute;
@@ -20,6 +19,7 @@ body{
     left: 0;
     background-repeat: repeat-x;
     background-size: cover;
+    transform: translate3d(0,0,0);
 }
 
 #layer05{
