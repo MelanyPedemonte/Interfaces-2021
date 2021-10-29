@@ -42,8 +42,10 @@ class Game{
     gameOver(){
         this.isOver = true;
         this.bird.dead();
-        let obstacle = document.getElementById("obstacle");
-        obstacle.style.display = "none";
+        let obstacletop = document.getElementById("obstacle-top");
+        obstacletop.style.display = "none";
+        let obstaclebottom = document.getElementById("obstacle-bottom");
+        obstaclebottom.style.display = "none";
         let star = document.getElementById("star");
         star.style.display = 'none';
         let puntos = document.getElementById("score");
