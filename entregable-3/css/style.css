@@ -103,7 +103,7 @@ body{
 }
 
 @keyframes girar{
-    100%{ transform: rotateYgi(360deg);}
+    100%{ transform: rotateY(360deg);}
 }
   
 /**Game Over*/
