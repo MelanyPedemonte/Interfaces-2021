@@ -94,12 +94,11 @@ body{
 #star{
     width: 60px; 
     height: 60px; 
-    animation:  moveObstacle 4s infinite linear;
+    animation:  moveObstacle 4s infinite linear, girar 2s infinite linear;
     position: absolute;
     background-repeat: no-repeat !important;
     background-size: contain !important;
     opacity: 0.8;
-    animation: girar 2s infinite linear;
 }
 
 @keyframes girar{
