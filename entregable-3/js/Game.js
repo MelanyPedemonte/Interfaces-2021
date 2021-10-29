@@ -42,6 +42,8 @@ class Game{
         puntos.innerHTML = this.score;
         let game = document.getElementById("gameOver");
         game.style.display = "block";
+        let starOver = document.getElementById("star");
+        starOver.style.display = "none";
     }
 
 
