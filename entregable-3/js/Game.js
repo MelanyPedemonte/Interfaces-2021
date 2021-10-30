@@ -32,7 +32,7 @@ class Game{
             };
             let puntos= document.getElementById("puntaje");
             puntos.innerHTML = "Score " + this.score;
-            if(this.score == 500){
+            if(this.score > 500){
                 this.bird.change();
 
             }
