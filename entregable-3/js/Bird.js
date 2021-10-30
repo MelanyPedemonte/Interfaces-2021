@@ -61,4 +61,12 @@ class Bird {
     dead(){
         this.bird.style.background = "url('./images/birdDie.png') left center";
     }
+
+    change(){
+        this.bird.style.background = "url('./images/birdpunk.png') left center";
+    }
+
+    deadPunk(){
+        this.bird.style.background = "url('./images/birdpunkdie.png') left center";
+    }
 }

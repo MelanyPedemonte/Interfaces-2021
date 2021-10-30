@@ -32,6 +32,10 @@ class Game{
             };
             let puntos= document.getElementById("puntaje");
             puntos.innerHTML = "Score " + this.score;
+            if(this.score == 500){
+                this.bird.change();
+
+            }
         });  
     } 
 
@@ -43,7 +47,11 @@ class Game{
 
     gameOver(){
         this.isOver = true;
-        this.bird.dead();
+        if(this.score > 500){
+            this.bird.deadPunk();
+        }else{
+            this.bird.dead();
+        }
         let obstacletop = document.getElementById("obstacle-top");
         obstacletop.style.display = "none";
         let obstaclebottom = document.getElementById("obstacle-bottom");
