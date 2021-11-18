@@ -1,0 +1,24 @@
+body{
+    background-color: blueviolet;
+}
+
+h1{
+    color: white;
+}
+
+.content{
+    
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+    
+}
+
+a{
+    color:whitesmoke;
+}
