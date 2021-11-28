@@ -1,0 +1,86 @@
+/* GENERAL */
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* FORMS */
+
+.formHelp{
+    display: flex;
+    justify-content: space-between;
+}
+
+.formHelp small{
+    color: white !important;
+    text-decoration: underline;
+}
+
+/* BUTTONS*/
+
+.dark-button{
+    background-color: #3F3941 !important;
+    border-color: #3F3941 !important;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.dark-button:hover{
+    background-color:black !important;
+    border-color: black !important;
+}
+
+.fb-btn{
+    width: 100%;
+}
+
+/* LOGIN Y REGISTER */
+.sesion{
+    background-color: #8E44AD;
+    color: white;
+}
+
+.login-logo{
+    text-align: center;
+}
+
+.login-logo img{
+    width: 25vw;
+    height: auto;
+    margin-top: 5vh;
+}
+
+.description-login{
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.login{
+    display: flex;
+}
+
+.form-login{
+    width: 50%;
+    margin: 10vh;
+}
+
+.fb-sesion{
+    width: 50%;
+    margin: 10vh;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.goRegister{
+    text-align: center;
+}
+
+.goRegister p a{
+    color: white;
+    text-decoration: underline;
+}
+
+.register-form-left, .register-form-rigth{
+    margin-bottom: 0vh !important;
+    margin-top: 8vh !important;
+}
