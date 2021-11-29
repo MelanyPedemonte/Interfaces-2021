@@ -129,3 +129,39 @@ header{
     margin-bottom: 0vh !important;
     margin-top: 8vh !important;
 }
+
+/*HOME*/
+
+.home-container{
+    display: flex;
+}
+
+.body-home{
+    background-color: #FAF7F7;
+}
+
+.card-profile{
+    width: 290px;
+    margin-top: 35px;
+    margin-left: 45px;
+}
+
+.card-profile img{
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.card-profile-body{
+    background-color: white;
+    text-align: center;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.card-profile-body img{
+    margin-top: -50px;
+}
+
+.card-profile-info{
+    padding: 15px;
+}
