@@ -196,12 +196,23 @@ header{
     width: 70%;
     height: 100%;
 }
+
 .localidad {
     position: absolute;
     width: 280px;
     height: 45px;
     left: 55px;
-    top: 110px;
+    top: 82px;
+}
+
+#location {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 64px;
+    top: 92px;
+
+    color: #8E44AD;
 }
 
 .especialidad {
@@ -209,7 +220,7 @@ header{
     width: 280px;
     height: 45px;
     left: 364px;
-    top: 110px;
+    top: 82px;
 }
 
 .universidad {
@@ -217,23 +228,179 @@ header{
     width: 280px;
     height: 45px;
     left: 664px;
-    top: 110px;
+    top: 82px;
+}
+
+/*BUSQUEDA*/
+.resultado{
+    position: absolute;
+    width: 893px;
+    height: 503px;
+    left: 55px;
+    top: 147px;
+    overflow-y: scroll;
+}
+
+.busquedaGeneral{
+    position: absolute;
+    width: 876px;
+    height: 1536px;
+    left: 0px;
+    top: 0px;
+}
+
+.rectangulo {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 1.17%;
+    height: 1536px;
+
+    background: rgba(142, 68, 173, 0.1);
+    border-radius: 16px;
+}
+
+.texto-busqueda {
+    position: absolute;
+    left: 10.64%;
+    right: 44.34%;
+    top: 0.4%;
+    bottom: 94.69%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 20px;
+    /* or 67% */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.shape {
+    position: absolute;
+    left: 6.05%;
+    right: 91.71%;
+    top: 1.6%;
+    bottom: 95.59%;
+    width: 20px;
+    height: 20px;
+
+    color: rgba(96, 100, 112, 0.79);
+}
+
+.result{
+    position: absolute;
+    left: 4.37%;
+    right: 4.37%;
+    top: 5.44%;
+    bottom: 83.79%;
+}
+
+.result-rectangulo{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: white;
+    border-radius: 4px;
+}
+
+.perfil-busqueda{
+    position: absolute;
+    left: 5.8%;
+    right: 76.8%;
+    top: 10.3%;
+    bottom: 13.94%;
+
+    background: url();
+}
+
+.nombre-busqueda{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 20px;
+    
+    color: #000000;
+}
+
+.datos-busqueda{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    
+    color: #353333;
+}
+
+.datos-busqueda svg{
+    width: 18px;
+    height: 18px;
+}
+
+.info-busqueda{
+    position: absolute;
+    width: 257px;
+    height: 131.87px;
+    left: 233px;
+    top: 17px;
+}
+
+.second-Small {
+    position: absolute;
+    left: 77.45%;
+    right: 11.98%;
+    bottom: 68.48%;
+}
+
+.rectangulo-Small{
+    top: 10.18%;
+}
+
+button{
+    background: #8E44AD;
+    border-color: #8E44AD;
+    padding: 4px;
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.infoExtra {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0px;
+
+    position: absolute;
+    left: 93.63%;
+    right: 3.42%;
+    top: 12%;
+    bottom: 72.14%;
 }
 
 /*PUBLICIDADES*/
 .publicidades{
     width: 30%;
     height: 100%;
-    left: 982px;
-    top: 110px;
 }
 
 .propaganda1 {
     position: absolute;
-    width: 251px;
-    height: 250px;
-    left: 1046px;
-    top: 110px;
+    width: 262px;
+    height: 283px;
+    left: 1016px;
+    top: 82px;
 
     background-image: url(../images/propaganda1.png);
     background-size: contain;
@@ -242,19 +409,14 @@ header{
 }
 
 .propaganda2 {
-    position: absolute;
-    width: 241px;
-    height: 265px;
-    left: 1052px;
-    top: 375px;
-
-    background-image: url(../images/propaganda2.png);
-    background-size: contain;
-    background-repeat:no-repeat;
-    justify-content: center;
+        position: absolute;
+        width: 258px;
+        height: 286px;
+        left: 1019px;
+        top: 356px;
+        background-image: url("../images/propaganda2.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        justify-content: center;    
 }
 
-.busqueda-container{
-    width: 100%;
-    height: 100%;
-}
