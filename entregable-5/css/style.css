@@ -197,30 +197,42 @@ header{
     height: 100%;
 }
 
-.localidad {
+.especialidad {
     position: absolute;
     width: 280px;
     height: 45px;
     left: 55px;
     top: 82px;
+    text-align: center;
 }
 
-#location {
+#location{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 380px;
+    top: 90px;
+
+    color: #8E44AD;
+}
+
+#especiality {
     position: absolute;
     width: 25px;
     height: 25px;
-    left: 64px;
+    left: 75px;
     top: 92px;
 
     color: #8E44AD;
 }
 
-.especialidad {
+.localidad {
     position: absolute;
     width: 280px;
     height: 45px;
     left: 364px;
     top: 82px;
+    text-align: center;
 }
 
 .universidad {
@@ -229,6 +241,17 @@ header{
     height: 45px;
     left: 664px;
     top: 82px;
+    text-align: center;
+}
+
+#university{
+    position: absolute;
+    width: 20px;
+    height:20px;
+    left: 50%;
+    top: 14%;
+
+    color: #8E44AD;
 }
 
 /*BUSQUEDA*/
@@ -301,6 +324,14 @@ header{
     bottom: 83.79%;
 }
 
+.result2{
+    position: absolute;
+    left: 4.48%;
+    right: 4.37%;
+    top: 17.78%;
+    bottom: 69.38%;
+}
+
 .result-rectangulo{
     position: absolute;
     left: 0%;
@@ -318,8 +349,6 @@ header{
     right: 76.8%;
     top: 10.3%;
     bottom: 13.94%;
-
-    background: url();
 }
 
 .nombre-busqueda{
