@@ -332,6 +332,45 @@ header{
     bottom: 69.38%;
 }
 
+.result3{
+    position: absolute;
+    left: 4.48%;
+    right: 4.37%;
+    top: 32.18%;
+    bottom: 55.98%;
+}
+
+.result4{
+    position: absolute;
+    left: 4.48%;
+    right: 4.37%;
+    top: 45.3%;
+    bottom: 43.1%;   
+}
+
+.result5{
+    position: absolute;
+    left: 4.48%;
+    right: 4.37%;
+    top: 58.34%;
+    bottom: 30.22%;   
+}
+
+.result6{
+    position: absolute;
+    left: 4.37%;
+    right: 4.48%;
+    top: 71.34%;
+    bottom: 16.82%;  
+}
+
+.result7{
+    position: absolute;
+    left: 4.48%;
+    right: 4.37%;
+    top: 84.90%;
+    bottom: 3.94%;
+}
 .result-rectangulo{
     position: absolute;
     left: 0%;
@@ -341,6 +380,12 @@ header{
 
     background: white;
     border-radius: 4px;
+}
+
+.perfil-busqueda img{
+    border-radius: 100px;
+    width: 141px;
+    height: 141px;
 }
 
 .perfil-busqueda{
@@ -382,6 +427,14 @@ header{
     height: 131.87px;
     left: 233px;
     top: 17px;
+}
+
+.info-busqueda2{
+    position: absolute;
+    width: 257px;
+    height: 131.87px;
+    left: 233px;
+    top: 30px;
 }
 
 .second-Small {
