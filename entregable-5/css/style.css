@@ -286,7 +286,7 @@ header{
 
 .especialidad {
     position: absolute;
-    width: 280px;
+    width: 260px;
     height: 45px;
     left: 55px;
     top: 82px;
@@ -297,7 +297,7 @@ header{
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 380px;
+    left: 360px;
     top: 90px;
 
     color: #8E44AD;
@@ -315,18 +315,18 @@ header{
 
 .localidad {
     position: absolute;
-    width: 280px;
+    width: 260px;
     height: 45px;
-    left: 364px;
+    left: 340px;
     top: 82px;
     text-align: center;
 }
 
 .universidad {
     position: absolute;
-    width: 280px;
+    width: 260px;
     height: 45px;
-    left: 664px;
+    left: 624px;
     top: 82px;
     text-align: center;
 }
@@ -335,10 +335,28 @@ header{
     position: absolute;
     width: 20px;
     height:20px;
-    left: 50%;
+    left: 650px;
     top: 14%;
 
     color: #8E44AD;
+}
+
+#search{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 897px;
+    top: 83px;
+    background: #8E44AD;
+    border-radius: 16px;
+}
+
+#shape{
+    position: absolute;
+    left: 27.62%;
+    right: 37.99%;
+    top: 25.38%;
+    bottom: 84.67%;
 }
 
 /*BUSQUEDA*/
@@ -370,6 +388,7 @@ header{
     background: rgba(142, 68, 173, 0.1);
     border-radius: 16px;
 }
+
 
 .texto-busqueda {
     position: absolute;
@@ -589,43 +608,111 @@ button{
         justify-content: center;    
 }
 
-@media (max-width: 600px) {
-    .login-logo img {
-        width: 60vw;
-    }
+/*Chat*/
+.chat-Mensajes {
+    position: absolute;
+    width: 371px;
+    height: 564px;
+    left: 38px;
+    top: 78px;
 
-    .login {
-        flex-direction: column;
-    }
+    background: rgba(142, 68, 173, 0.1);
+    border-radius: 10px;
+}
 
-    .form-login {
-        width: 80%;
-        margin: 5vh;
-    }
+.chat{
+    position: absolute;
+    width: 322.17px;
+    height: 453px;
+    left: 26px;
+    top: 21px;
 
-    .fb-sesion {
-        width: 80%;
-        margin: 5vh;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
+    background: #FCFDFD;
+    border-radius: 4px;
+}
 
-    #register-form-container{
-        flex-direction: column;
-    }
+.nuevoChat{
+    position: absolute;
+    width: 297px;
+    height: 41.93px;
+    left: 38px;
+    top: 499px;
+    
+    border-radius: 10px;
+    background-color: #8E44AD;
+}
 
-    .register-form-left{
-        width: 80% !important;
-        margin-left: 5vh !important;
-        margin-right: 5vh !important;
-        margin-top: 5vh !important;
-        margin-bottom: 0vh !important;
-    }
+.nuevoChat p{
+    position: absolute;
+    left: 25.65%;
+    right: 25.22%;
+    top: 34.38%;
+    bottom: 31.25%;
 
-    .register-form-rigth{
-        width: 80% !important;
-        margin-left: 5vh !important;
-        margin-right: 5vh !important;
-        margin-top: 0vh !important;
-    }
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+.contains-charla {
+    position: absolute;
+    width: 888px;
+    height: 564px;
+    left: 439px;
+    top: 78px;
+    
+    background: rgba(142, 68, 173, 0.1);
+    border-radius: 16px;
+}
+
+.charla {
+    position: absolute;
+    width: 830px;
+    height:450px;
+    left: 30px;
+    top: 20px;
+
+    background: #FFFFFF;
+    border-radius: 16px;
+}
+
+.liner {
+    position: absolute;
+    left: 4.9%;
+    right: 4.46%;
+    top: 85.61%;
+
+    border: 2px solid #8E44AD;
+}
+
+.box-charla {
+    position: absolute;
+    left: 4%;
+    right: 2.83%;
+    top: 88.59%;
+    bottom: 3.74%;
+
+    background: #FFFFFF;
+    border-radius: 16px;
+}
+
+.texto-charla {
+    position: absolute;
+    left: 5%;
+    top: 9.71%;
+    bottom: 8.5%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: dimgray;
+    border: white;
+    width: 636px;
 }
