@@ -1090,6 +1090,92 @@ button{
     top: 11.57px;
 }
 
+.dialogo1{
+    position: absolute;
+    left: 500px;
+    right: 13px;
+    top: 11px;
+    bottom: 406px;
+    background: #8E44AD;
+    border-radius: 15px;
+}
+
+.dialogo p{
+    color: white;
+    position: absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+}
+
+.dialogoa p{
+    color: black;
+    position: absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+}
+
+.dialogo1 p{
+    width: 250.26px;
+    height: 16.24px;
+    left: 28px;
+    top: 8px;
+}
+
+.dialogo2{
+    position: absolute;
+    left: 389px;
+    right: 13px;
+    top: 52px;
+    bottom: 365px;
+    background: #8E44AD;
+    border-radius: 15px;
+}
+
+.dialogo2 p{
+    width: 364.26px;
+    height: 16.24px;
+    left: 18px;
+    top: 8px;
+}
+
+.dialogo3{
+    position: absolute;
+    left: 559px;
+    right: 13px;
+    top: 92px;
+    bottom: 327px;
+    background: #8E44AD;
+    border-radius: 15px;
+}
+
+.dialogo3 p{
+    width: 194.26px;
+    height: 16.24px;
+    left: 18px;
+    top: 8px;
+}
+
+.dialogo4{
+    position: absolute;
+    left: 33px;
+    right: 383px;
+    top: 152px;
+    bottom: 265px;
+    background: rgba(142, 68, 173, 0.1);
+    border-radius: 15px;
+}
+
+.dialogo4 p{
+    width: 355px;
+    height: 16.24px;
+    left: 18px;
+    top: 8px;
+}
+
 @media (max-width: 600px) {
     .login-logo img {
         width: 60vw;
