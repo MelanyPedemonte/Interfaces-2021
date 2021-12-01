@@ -373,19 +373,19 @@ header{
     color: #8E44AD;
 }
 
-#search{
+#search {
     position: absolute;
-    width: 43px;
+    width: 52px;
     height: 43px;
-    left: 897px;
+    left: 895px;
     top: 83px;
     background: #8E44AD;
-    border-radius: 16px;
+    border-radius: 8px;
 }
 
 #shape{
     position: absolute;
-    left: 27.62%;
+    left: 30.62%;
     right: 37.99%;
     top: 25.38%;
     bottom: 84.67%;
@@ -767,7 +767,7 @@ button{
     background-color: #8E44AD;
 }
 
-.nuevoChat p{
+.nuevoChat a{
     position: absolute;
     left: 25.65%;
     right: 25.22%;
@@ -796,6 +796,25 @@ button{
     border-radius: 16px;
 }
 
+.cabecera-chat {
+    position: absolute;
+    width: 788px;
+    height: 65px;
+    left: 20px;
+    top: 17px;
+    border-block-end: 1px solid  #e7e5e5;
+}
+
+.cabecera-chat img {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border: 50%;
+    border-radius: 50%;
+    left: 24px;
+    top: -2px;
+}
+
 .charla {
     position: absolute;
     width: 830px;
@@ -805,6 +824,37 @@ button{
 
     background: #FFFFFF;
     border-radius: 16px;
+}
+
+.charla-texto {
+    position: absolute;
+    width: 816px;
+    height: 359px;
+    left: -9px;
+    top: 86px;
+    overflow-y: scroll;
+}
+
+.contenido-texto {
+    position: absolute;
+    width: 800px;
+    height: 450px;
+    left: 0px;
+    top: 0px; 
+}
+
+/*OVERFLOW*/
+.charla-texto::-webkit-scrollbar {
+    width: 8px;               
+  }
+  
+.charla-texto::-webkit-scrollbar-track {
+    background: #EADEDE;        
+}
+  
+.charla-texto::-webkit-scrollbar-thumb {
+    background-color: #8E44AD;   
+    border-radius: 20px;      
 }
 
 .liner {
@@ -898,6 +948,20 @@ button{
     color: #181818;
 }
 
+.name-chat1 {
+    position: absolute;
+    width: 195px;
+    height: 14.07px;
+    left: 105px;
+    top: 12px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 16px;
+    color: #181818;
+}
+
 .online-chat {
     position: absolute;
     width: 133.26px;
@@ -908,7 +972,23 @@ button{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 10px;
+    font-size: 11px;
+    line-height: 150%;
+
+    color: rgba(24, 24, 24, 0.5);
+}
+
+.online-chat1 {
+    position: absolute;
+    width: 133.26px;
+    height: 16.24px;
+    left: 105px;
+    top: 30px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
     line-height: 150%;
 
     color: rgba(24, 24, 24, 0.5);
@@ -921,6 +1001,15 @@ button{
     left: 7px;
     border-block-start: 1px solid #dfdcdc; 
     border-right: 8px solid #8E44AD;
+    top: 128px;
+}
+
+.persona2a {
+    position: absolute;
+    width: 309px;
+    height: 72.52px;
+    left: 7px;
+    border-block-start: 1px solid #dfdcdc; 
     top: 128px;
 }
 
@@ -951,9 +1040,54 @@ button{
     top: 369px;
 }
 
-.persona:hover, .persona2:hover, .persona3:hover, .persona4:hover, .persona5:hover{
+.persona5a {
+    position: absolute;
+    width: 309px;
+    height: 72.52px;
+    left: 7px;
+    border-block-start: 1px solid #dfdcdc; 
+    border-right: 8px solid #8E44AD;
+    top: 369px;
+}
+
+.persona:hover, .persona2a:hover, .persona3:hover, .persona4:hover, .persona5:hover{
     background: #80808073;
     opacity:0.9;
+}
+
+.enviar-chat{
+    position: absolute;
+    left: 763px;
+    right: 35px;
+    top: 7px;
+    background: violet;
+    bottom: 7px;
+
+    border-radius: 4px;
+    background: #8E44AD;
+   
+}
+
+.enviar-chat svg{
+    position: absolute;
+    left: 23.65%;
+    top: 26.22%;
+}
+
+.llamada-chat {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 700px;
+    top: 11.57px;
+}
+
+.video-chat {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 740px;
+    top: 11.57px;
 }
 
 @media (max-width: 600px) {
