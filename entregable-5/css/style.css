@@ -20,6 +20,10 @@ h6, h3{
     text-decoration: underline;
 }
 
+#inputpublicar:focus-visible{
+    outline: 0 !important;
+}
+
 /* BUTTONS*/
 
 .dark-button{
@@ -562,4 +566,45 @@ button{
         background-size: contain;
         background-repeat: no-repeat;
         justify-content: center;    
+}
+
+@media (max-width: 600px) {
+    .login-logo img {
+        width: 60vw;
+    }
+
+    .login {
+        flex-direction: column;
+    }
+
+    .form-login {
+        width: 80%;
+        margin: 5vh;
+    }
+
+    .fb-sesion {
+        width: 80%;
+        margin: 5vh;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #register-form-container{
+        flex-direction: column;
+    }
+
+    .register-form-left{
+        width: 80% !important;
+        margin-left: 5vh !important;
+        margin-right: 5vh !important;
+        margin-top: 5vh !important;
+        margin-bottom: 0vh !important;
+    }
+
+    .register-form-rigth{
+        width: 80% !important;
+        margin-left: 5vh !important;
+        margin-right: 5vh !important;
+        margin-top: 0vh !important;
+    }
 }
