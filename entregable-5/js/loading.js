@@ -511,4 +511,4 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
         </div>
 
     </div> 
-`;}, 4000);
+`;}, 2000);
