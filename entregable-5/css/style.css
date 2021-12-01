@@ -377,6 +377,14 @@ header{
     top: 0px;
 }
 
+.busquedaGeneral-b {
+    position: absolute;
+    width: 876px;
+    height: 520px;
+    left: 0px;
+    top: 0px;
+}
+
 .rectangulo {
     position: absolute;
     left: 0%;
@@ -385,6 +393,17 @@ header{
     bottom: 1.17%;
     height: 1536px;
 
+    background: rgba(142, 68, 173, 0.1);
+    border-radius: 16px;
+}
+
+.rectangulo-b {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 1.17%;
+    height: 900px;
     background: rgba(142, 68, 173, 0.1);
     border-radius: 16px;
 }
@@ -410,6 +429,21 @@ header{
     color: #000000;
 }
 
+.texto-busqueda-b {
+    position: absolute;
+    left: 10.64%;
+    right: 44.34%;
+    top: 2.7%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
 .shape {
     position: absolute;
     left: 6.05%;
@@ -422,12 +456,31 @@ header{
     color: rgba(96, 100, 112, 0.79);
 }
 
+.shape-b {
+    position: absolute;
+    left: 6.05%;
+    right: 91.71%;
+    top: 2.6%;
+    bottom: 95.59%;
+    width: 20px;
+    height: 20px;
+    color: rgba(96, 100, 112, 0.79);
+}
+
 .result{
     position: absolute;
     left: 4.37%;
     right: 4.37%;
     top: 5.44%;
     bottom: 83.79%;
+}
+
+.result-b {
+    position: absolute;
+    left: 4.37%;
+    right: 4.37%;
+    top: 7.44%;
+    bottom: 73.79%;
 }
 
 .result2{
@@ -438,6 +491,14 @@ header{
     bottom: 69.38%;
 }
 
+.result2-b {
+    position: absolute;
+    left: 4.48%;
+    right: 4.37%;
+    top: 29.78%;
+    bottom: 49.38%;
+}
+
 .result3{
     position: absolute;
     left: 4.48%;
@@ -446,12 +507,28 @@ header{
     bottom: 55.98%;
 }
 
+.result3-b {
+    position: absolute;
+    left: 4.48%;
+    right: 4.37%;
+    top: 54.18%;
+    bottom: 24.98%;
+}
+
 .result4{
     position: absolute;
     left: 4.48%;
     right: 4.37%;
     top: 45.3%;
     bottom: 43.1%;   
+}
+
+.result4-b {
+    position: absolute;
+    left: 4.48%;
+    right: 4.37%;
+    top: 78.3%;
+    bottom: 2.1%;
 }
 
 .result5{
@@ -585,10 +662,10 @@ button{
 
 .propaganda1 {
     position: absolute;
-    width: 262px;
-    height: 283px;
-    left: 1016px;
-    top: 82px;
+    width: 220px;
+    height: 220px;
+    left: 1046px;
+    top: 146px;
 
     background-image: url(../images/propaganda1.png);
     background-size: contain;
@@ -598,10 +675,11 @@ button{
 
 .propaganda2 {
         position: absolute;
-        width: 258px;
-        height: 286px;
-        left: 1019px;
-        top: 356px;
+        width: 222px;
+        height: 245px;
+        left: 1046px;
+        top: 396px;
+
         background-image: url("../images/propaganda2.png");
         background-size: contain;
         background-repeat: no-repeat;
