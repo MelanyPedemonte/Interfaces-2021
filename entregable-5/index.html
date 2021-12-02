@@ -22,7 +22,7 @@
             <form>
                 <div class="form-group">
                   <label for="username">Nombre de Usuario</label>
-                  <input type="email" class="form-control" id="username" placeholder="Nombre de Usuario">
+                  <input type="text" class="form-control" id="username" placeholder="Nombre de Usuario">
                 </div>
                 <div class="form-group">
                   <div class="formHelp">
@@ -31,8 +31,10 @@
                   </div>
                   <input type="password" class="form-control" id="password" placeholder="Contraseña">
                 </div>
-                <a href="home.html" class="btn btn-primary dark-button">INICIAR SESION</a>
+                <small id="errorForm" class="form-text" style="color: red; font-size: 13px;">Nombre de usuario o contraseña incorrectos*</small>
+              
               </form>
+              <button onclick="submitForm()" class="btn btn-primary dark-button">INICIAR SESION</button>
         </div>
         <div class="fb-sesion">
             <div class="fb-container">
@@ -46,6 +48,7 @@
         <p>No tienes cuenta? <a href="register.html">REGISTRARSE</a></p>
     </div>
 
+    <script src="./js/main.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

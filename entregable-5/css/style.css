@@ -45,6 +45,14 @@ h6, h3{
     outline: 0 !important;
 }
 
+#errorForm{
+    display: none;
+}
+
+.displayError{
+    display: block !important;
+}
+
 /* BUTTONS*/
 
 .dark-button{
@@ -122,10 +130,32 @@ header{
     align-items: center;
     margin-top: 2%;
 }
+header a{
+    color: white;
+}
+
+header a:hover{
+    color: white;
+    text-decoration: none;
+}
 
 .profile img{
     width: 45px;
     height: 45px;
+}
+
+.dropdown-menu{
+    background-color: #8E44AD;
+    margin-top: 4vh;
+}
+
+.dropdown-item{
+    color: white;
+}
+
+.dropdown-item:hover{
+    color: white;
+    background-color: #8E44AD;
 }
 
 /* LOGIN Y REGISTER */

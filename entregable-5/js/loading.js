@@ -1,28 +1,34 @@
 "use strict"
 
 window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<header>
-<div class="logo">
+<a class="logo" href="home.html">
             <img src="./images/medivet-blanco.png">
-        </div> 
+        </a> 
         <div class="search-bar">
             <input class="form-control mr-sm-2" type="search" placeholder="Busquedas" aria-label="Search">
         </div>
         <div class="vl"></div>
-        <div class="home">
+        <a class="home" href="home.html">
             <span class="iconify" data-icon="ant-design:home-outlined"></span>
             <p class="text-header">Inicio</p>
-        </div>
-        <div class="mensajes">
+        </a>
+        <a class="mensajes" href="chat.html">
             <span class="iconify" data-icon="bx:bx-chat"></span>
             <p class="text-header">Mensajes</p>
-        </div>
+        </a>
         <div class="notificaciones">
             <span class="iconify" data-icon="ic:round-notifications-none"></span>
             <p class="text-header">Notificaciones</p>
         </div>
         <div class="profile">
             <img src="./images/profilepic.png">
-            <span class="iconify" data-icon="ant-design:caret-down-filled"></span>
+            <span class="iconify dropdown-toggle" data-icon="ant-design:caret-down-filled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"></span>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Perfil</a>
+                <a class="dropdown-item" href="#">Configuracion y Privacidad</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="index.html">Cerrar Sesion</a>
+            </div>
         </div> 
     </header>
 
@@ -446,13 +452,42 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                         <div>
                             <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
                             <small style="color: black; margin-right: 5px;">20</small>
-                            <span class="iconify" data-icon="bi:chat-left"></span>
+                            <span class="iconify" data-icon="bi:chat-left" data-toggle="modal" data-target="#coment3Modal"></span>
                             <small style="color: black; margin-right: 5px;">0</small>
                         </div>
                         <div>
                             <span class="iconify" data-icon="bi:share-fill"></span>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="coment3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Comentarios</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>No hay comentarios.</p>
+                        <div class="publicar" style="padding: 0;">
+                            <p style="border-bottom: solid 1px #F4F4F4;"></p>
+                            <div class="new-post-info">
+                                <input placeholder="Deja tu comentario.." style="border: 0;" id="inputpublicar">
+                                <div>
+                                    <span class="iconify" data-icon="ant-design:paper-clip-outlined"></span>
+                                    <span class="iconify" data-icon="akar-icons:image"></span>
+                                    <span class="iconify" data-icon="dashicons:editor-video"></span>
+                                        <span class="iconify send-button" data-icon="akar-icons:send"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
                 </div>
             </div>
 
