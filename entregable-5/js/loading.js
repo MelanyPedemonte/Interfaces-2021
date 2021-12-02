@@ -42,7 +42,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
         <div class="presentacion">
 
             <div class="card-profile">
-                <img src="./images/header.png">
+                <img id="card-profile-img" src="./images/header.png">
                 <div class="card-profile-body">
                     <img src="./images/profilepic.png">
                     <div class="card-profile-info">
@@ -54,7 +54,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                 </div>
             </div>
 
-            <img class="card-profile" src="./images/publicidad.jpg">
+            <img class="card-profile" style="height: 21vh;" src="./images/publicidad.jpg">
 
         </div>
 
