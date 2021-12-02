@@ -14,30 +14,36 @@
 <body class="body-home">
 
     <header>
-        <div class="logo">
-            <img src="./images/medivet-blanco.png">
-        </div> 
-        <div class="search-bar">
-            <input class="form-control mr-sm-2" type="search" value="Laura Diaz" aria-label="Search">
-        </div>
-        <div class="vl"></div>
-        <div class="home">
-            <span class="iconify" data-icon="ant-design:home-outlined"></span>
-            <p class="text-header">Inicio</p>
-        </div>
-        <div class="mensajes">
-            <span class="iconify" data-icon="bx:bx-chat"></span>
-            <p class="text-header">Mensajes</p>
-        </div>
-        <div class="notificaciones">
-            <span class="iconify" data-icon="ic:round-notifications-none"></span>
-            <p class="text-header">Notificaciones</p>
-        </div>
-        <div class="profile">
-            <img src="./images/profilepic.png">
-            <span class="iconify" data-icon="ant-design:caret-down-filled"></span>
-        </div> 
-    </header>
+        <a class="logo" href="home.html">
+                    <img src="./images/medivet-blanco.png">
+        </a> 
+                <div class="search-bar">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Busquedas" aria-label="Search">
+                </div>
+                <div class="vl"></div>
+                <a class="home" href="home.html">
+                    <span class="iconify" data-icon="ant-design:home-outlined"></span>
+                    <p class="text-header">Inicio</p>
+                </a>
+                <a class="mensajes" href="chat.html">
+                    <span class="iconify" data-icon="bx:bx-chat"></span>
+                    <p class="text-header">Mensajes</p>
+                </a>
+                <div class="notificaciones">
+                    <span class="iconify" data-icon="ic:round-notifications-none"></span>
+                    <p class="text-header">Notificaciones</p>
+                </div>
+                <div class="profile">
+                    <img src="./images/profilepic.png">
+                    <span class="iconify dropdown-toggle" data-icon="ant-design:caret-down-filled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"></span>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Perfil</a>
+                        <a class="dropdown-item" href="#">Configuracion y Privacidad</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="index.html">Cerrar Sesion</a>
+                    </div>
+                </div> 
+        </header>
 
     <div class="busqueda-container">
 

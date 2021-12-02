@@ -45,6 +45,14 @@ h6, h3{
     outline: 0 !important;
 }
 
+#errorForm{
+    display: none;
+}
+
+.displayError{
+    display: block !important;
+}
+
 /* BUTTONS*/
 
 .dark-button{
@@ -121,6 +129,14 @@ header{
     flex-direction: column;
     align-items: center;
     margin-top: 2%;
+}
+header a{
+    color: white;
+}
+
+header a:hover{
+    color: white;
+    text-decoration: none;
 }
 
 .profile img{
