@@ -1175,6 +1175,109 @@ button{
     left: 18px;
     top: 8px;
 }
+
+.dialogo5{
+    position: absolute;
+    left: 690px;
+    right: 13px;
+    top: 201px;
+    bottom: 217px;
+    background: #8E44AD;
+    border-radius: 15px;
+}
+
+.dialogo5 p{
+    width: 49px;
+    height: 16.24px;
+    left: 18px;
+    top: 8px;
+}
+
+.dialogo6{
+    position: absolute;
+    left: 460px;
+    right: 13px;
+    top: 239px;
+    bottom: 179px;
+    background: #8E44AD;
+    border-radius: 15px;
+}
+
+.dialogo6 p{
+    width: 297px;
+    height: 16.24px;
+    left: 18px;
+    top: 8px;
+}
+
+.dialogo7{
+    position: absolute;
+    left: 643px;
+    right: 13px;
+    top: 278px;
+    bottom: 141px;
+    background: #8E44AD;
+    border-radius: 15px;
+}
+
+.dialogo7 p{
+    width: 113px;
+    height: 16.24px;
+    left: 18px;
+    top: 8px;
+}
+
+.dialogo8{
+    position: absolute;
+    left: 606px;
+    right: 13px;
+    top: 315px;
+    bottom: 103px;
+    background: #8E44AD;
+    border-radius: 15px;
+}
+
+.dialogo8 p{
+    width: 154px;
+    height: 16.24px;
+    left: 18px;
+    top: 8px;
+}
+
+.dialogo9{
+    position: absolute;
+    left: 33px;
+    right: 432px;
+    top: 375px;
+    bottom: 43px;
+    background: rgba(142, 68, 173, 0.1);
+    border-radius: 15px;
+}
+
+.dialogo9 p{
+    width: 355px;
+    height: 16.24px;
+    left: 18px;
+    top: 8px;
+}
+
+.dialogo10{
+    position: absolute;
+    left: 33px;
+    right: 542px;
+    top: 414px;
+    bottom: 5px;
+    background: rgba(142, 68, 173, 0.1);
+    border-radius: 15px;
+}
+
+.dialogo10 p{
+    width: 355px;
+    height: 16.24px;
+    left: 18px;
+    top: 8px;
+}
+
 /*MODAL*/
 .comentario{
     border-radius: .25em;
