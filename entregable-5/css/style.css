@@ -380,6 +380,8 @@ header a:hover{
     left: 55px;
     top: 82px;
     text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
 }
 
 #location{
@@ -409,6 +411,8 @@ header a:hover{
     left: 340px;
     top: 82px;
     text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
 }
 
 .universidad {
@@ -418,6 +422,8 @@ header a:hover{
     left: 624px;
     top: 82px;
     text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
 }
 
 #university{
@@ -932,7 +938,7 @@ a:not([href]):not([tabindex]) {
     right: 4.46%;
     top: 85.61%;
 
-    border: 2px solid #8E44AD;
+    border: 1px solid #8E44AD;
 }
 
 .box-charla {
