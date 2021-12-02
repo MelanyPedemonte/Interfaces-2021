@@ -222,7 +222,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                     <div class="post-icons">
                         <div>
                             <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                            <small style="color: black; margin-right: 5px;">20</small>
+                            <small style="color: black; margin-right: 5px;">15</small>
                             <span class="iconify" data-icon="bi:chat-left" data-toggle="modal" data-target="#coment1Modal"></span>
                             <small style="color: black; margin-right: 5px;">1</small>
                         </div>

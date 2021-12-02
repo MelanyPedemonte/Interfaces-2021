@@ -6,6 +6,14 @@ function btnFollow(btn) {
 
 function btnLike(btn) {
     btn.classList.toggle("like-active");
+
+    let likeCount = btn.nextElementSibling;
+    if(btn.classList.contains("like-active")){
+        likeCount.innerHTML++;
+    }
+    else{
+        likeCount.innerHTML--;
+    }
 }
 
 function submitForm() {
