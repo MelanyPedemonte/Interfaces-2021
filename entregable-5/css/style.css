@@ -99,6 +99,18 @@ h6, h3{
     background: linear-gradient(-45deg, #bfa6ca, #b674c4, #b127d3, #5f1366);
 }
 
+#close-chat span:focus-visible{
+    outline: none;
+}
+
+#close-chat:focus-visible{
+    outline: none;
+}
+
+#close-chat:focus{
+    outline: none;
+}
+
 /* HEADER */
 header {
     display: flex;
@@ -438,7 +450,7 @@ header a:hover{
 
 #shape1 {
     position: absolute;
-    left: 33.3%;
+    left: 32.3%;
     right: 37.99%;
     top: 3.18%;
     bottom: 84.67%;
