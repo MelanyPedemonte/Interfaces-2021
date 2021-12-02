@@ -6,6 +6,11 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
         </a> 
         <div class="search-bar">
             <input class="form-control mr-sm-2" type="search" placeholder="Busquedas" aria-label="Search">
+            <a href="busqueda.html">
+                <svg  id="shape1" width="20" height="20" viewBox="0 0 20 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8594 20.1562L20 24.27L18.1009 26.7577L14.9402 22.6175C10.9627 26.4271 5.41393 25.5642 2.228 20.6404C-0.957924 15.7166 -0.698417 8.40522 2.82254 3.8899C6.34349 -0.625429 11.9294 -0.810285 15.6199 3.46639C19.3105 7.74306 19.8515 15.028 16.8594 20.1562ZM9.37712 3.90316C5.67095 3.90316 2.6665 7.83866 2.6665 12.6934C2.6665 17.5481 5.67095 21.4836 9.37712 21.4836C13.0833 21.4836 16.0877 17.5481 16.0877 12.6934C16.0877 7.83866 13.0833 3.90316 9.37712 3.90316Z" fill="gray" fill-opacity="0.85"/>
+                </svg>
+            </a>
         </div>
         <div class="vl"></div>
         <a class="home" href="home.html">
@@ -77,7 +82,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                         </div>
                         <div style="margin-left: 15px;">
                             <h6>Ramiro Nuñez</h6>
-                            <p style="font-weight: 300;">Jefe en Clinica Veterinaria Amet</p>
+                            <p style="font-weight: 300; font-size: 12px;">Jefe en Clinica Veterinaria Amet</p>
                         </div>
                     </div>
                     <p style="font-size: 15px;">Los zorros tienen más de 12 sonidos diferentes 
@@ -117,7 +122,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                     </div>
                                     <div style="margin-left: 15px;">
                                         <h6>Mariano Cervone</h6>
-                                        <p style="font-weight: 300;">Estudiante de Ciencias Veterinarias</p>
+                                        <p style="font-weight: 300; font-size: 12px;">Estudiante de Ciencias Veterinarias</p>
                                     </div>
                                 </div>
                                 <p style="border-bottom: solid 1px white; text-align: end;"></p>
@@ -140,7 +145,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                     </div>
                                     <div style="margin-left: 15px;">
                                         <h6>Diego Garcia</h6>
-                                        <p style="font-weight: 300;">Asistente en Clinica Veterinaria Paz</p>
+                                        <p style="font-weight: 300; font-size: 12px;"">Asistente en Clinica Veterinaria Paz</p>
                                     </div>
                                 </div>
                                 <p style="border-bottom: solid 1px white; text-align: end;"></p>
@@ -199,7 +204,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                         </div>
                         <div style="margin-left: 15px;">
                             <h6>Camila Vasquez</h6>
-                            <p style="font-weight: 300;">Estudiante avanzada de Ciencias Veterinarias</p>
+                            <p style="font-weight: 300; font-size: 12px;";">Estudiante avanzada de Ciencias Veterinarias</p>
                         </div>
                     </div>
                     <p style="font-size: 15px;">Los más fieles compañeros!</p>
@@ -247,7 +252,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                                 </div>
                                                 <div style="margin-left: 15px;">
                                                     <h6>Justina Britos</h6>
-                                                    <p style="font-weight: 300;">Estudiante de Ciencias Veterinarias</p>
+                                                    <p style="font-weight: 300; font-size: 12px;">Estudiante de Ciencias Veterinarias</p>
                                                 </div>
                                             </div>
                                             <p style="border-bottom: solid 1px white; text-align: end;"></p>
@@ -339,7 +344,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                         </div>
                         <div style="margin-left: 15px;">
                             <h6>Alejandro Suarez</h6>
-                            <p style="font-weight: 300;">Voluntario en Costa Rica</p>
+                            <p style="font-weight: 300; font-size: 12px;">Voluntario en Costa Rica</p>
                         </div>
                     </div>
                     <p style="font-size: 15px;">La isla caboverdiana de Boa Vista constituye el mejor escenario 
@@ -378,7 +383,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                     </div>
                                     <div style="margin-left: 15px;">
                                         <h6>Juan Cruz Salinas</h6>
-                                        <p style="font-weight: 300;">Owner en Manchitas PetShop</p>
+                                        <p style="font-weight: 300; font-size: 12px;"">Owner en Manchitas PetShop</p>
                                     </div>
                                 </div>
                                 <p style="border-bottom: solid 1px white; text-align: end;"></p>
@@ -401,7 +406,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                     </div>
                                     <div style="margin-left: 15px;">
                                         <h6>Justina Britos</h6>
-                                        <p style="font-weight: 300;">Estudiante de Ciencias Veterinarias</p>
+                                        <p style="font-weight: 300; font-size: 12px;">Estudiante de Ciencias Veterinarias</p>
                                     </div>
                                 </div>
                                 <p style="border-bottom: solid 1px white; text-align: end;"></p>
@@ -443,7 +448,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                         </div>
                         <div style="margin-left: 15px;">
                             <h6>Rebeca Araujo</h6>
-                            <p style="font-weight: 300;">Veterinaria y viajera</p>
+                            <p style="font-weight: 300; font-size: 12px;"">Veterinaria y viajera</p>
                         </div>
                     </div>
                     <p style="font-size: 15px;">El lugar más frio del mundo</p>

@@ -91,12 +91,13 @@ h6, h3{
 }
 
 /* HEADER */
-header{
+header {
     display: flex;
     background-color: #8E44AD;
     color: white;
     height: 60px;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .logo{
@@ -245,6 +246,7 @@ header a:hover{
 
 .home-container{
     display: flex;
+    justify-content: space-evenly;
 }
 
 .body-home{
@@ -419,6 +421,15 @@ header a:hover{
     right: 37.99%;
     top: 25.38%;
     bottom: 84.67%;
+}
+
+#shape1 {
+    position: absolute;
+    left: 32.3%;
+    right: 37.99%;
+    top: 3.18%;
+    bottom: 84.67%;
+    background: white;
 }
 
 /*BUSQUEDA*/
