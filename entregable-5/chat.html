@@ -76,7 +76,61 @@
         </div>
 
         <div class="nuevoChat">
-            <a href="nuevoChat.html">Comenzar nuevo chat</a>
+            <a data-toggle="modal" data-target="#chatModal">Comenzar nuevo chat</a>
+        </div>
+
+        <div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+            <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: transparent; border: none;">
+                <div class="modal-body">
+
+                        <div class="chat-Mensajes">
+                            <div class="chat">
+                                <p class="text-chat">Nuevo chat</p>
+                                <div class="line-chat"></div>
+                    
+                                <div class="persona">
+                                    <img class="p1foto" src="./images/1.png" alt="">
+                                    <p class="name-chat">Jane Done</p>
+                                    <p class="online-chat">Online</p>
+                                </div>
+                    
+                                <div class="persona2a">
+                                    <img class="p1foto" src="./images/2.png" alt="">
+                                    <p class="name-chat">Laura Diaz</p>
+                                    <p class="online-chat">Online</p>
+                                </div>
+                    
+                                <div class="persona3">
+                                    <img class="p1foto" src="./images/3.png" alt="">
+                                    <p class="name-chat">Valeria Linares</p>
+                                    <p class="online-chat">Online</p>
+                                </div>
+                    
+                                <div class="persona4">
+                                    <img class="p1foto" src="./images/4.png" alt="">
+                                    <p class="name-chat">Melany Dorrego</p>
+                                    <p class="online-chat">Online</p>
+                                </div>
+                    
+                                <a href="nuevoChat.html">
+                                    <div class="persona5">
+                                        <img class="p1foto" src="./images/followed.png" alt="">
+                                        <p class="name-chat">Helena Peña</p>
+                                        <p class="online-chat">Online</p>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                        </div>
+                  
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            </div>
         </div>
     </div>
 

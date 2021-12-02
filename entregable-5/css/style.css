@@ -815,6 +815,10 @@ button{
     color: #FFFFFF;
 }
 
+a:not([href]):not([tabindex]) {
+    color: white;
+}
+
 .contains-charla {
     position: absolute;
     width: 888px;
@@ -924,7 +928,7 @@ button{
 
 .text-chat {
     position: absolute;
-    width: 44.78px;
+    width: 86px;
     height: 11.26px;
     left: 28px;
     top: 19.58px;
