@@ -74,8 +74,8 @@ h6, h3{
 }
 
 .violet-button:hover{
-    background-color:black !important;
-    border-color: black !important;
+    background-color:#b127d3 !important;
+    border-color: #b127d3 !important;
 }
 
 .send-button{
@@ -88,6 +88,15 @@ h6, h3{
 
 .fb-btn{
     width: 100%;
+}
+
+.nuevoChat{
+    border-radius: .25em !important;
+}
+
+.nuevoChat:hover{
+    color: white;
+    background: linear-gradient(-45deg, #bfa6ca, #b674c4, #b127d3, #5f1366);
 }
 
 /* HEADER */
@@ -156,7 +165,7 @@ header a:hover{
 
 .dropdown-item:hover{
     color: white;
-    background-color: #8E44AD;
+    background-color: #b127d3;
 }
 
 /* LOGIN Y REGISTER */
