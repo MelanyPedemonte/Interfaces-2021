@@ -68,7 +68,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                         <span class="iconify" data-icon="ant-design:paper-clip-outlined"></span>
                         <span class="iconify" data-icon="akar-icons:image"></span>
                         <span class="iconify" data-icon="dashicons:editor-video"></span>
-                            <span class="iconify send-button" data-icon="akar-icons:send"></span>
+                        <span class="iconify send-button" data-icon="akar-icons:send"></span>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                     <div class="post-icons">
                         <div>
                             <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                            <small style="color: black; margin-right: 5px;">20</small>
+                            <small style="color: black; margin-right: 5px;">10</small>
                             <span class="iconify" data-icon="bi:chat-left" data-toggle="modal" data-target="#comentModal"></span>
                             <small style="color: black; margin-right: 5px;">2</small>
                         </div>
@@ -130,7 +130,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                 <div class="post-icons">
                                     <div style="margin-bottom: 5px;">
                                         <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                                        <small style="color: black; margin-right: 5px;">20</small>
+                                        <small style="color: black; margin-right: 5px;">2</small>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                 <div class="post-icons">
                                     <div style="margin-bottom: 5px;">
                                         <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                                        <small style="color: black; margin-right: 5px;">20</small>
+                                        <small style="color: black; margin-right: 5px;">3</small>
                                     </div>
                                 </div>
                             </div>
@@ -222,7 +222,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                     <div class="post-icons">
                         <div>
                             <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                            <small style="color: black; margin-right: 5px;">15</small>
+                            <small style="color: black; margin-right: 5px;">16</small>
                             <span class="iconify" data-icon="bi:chat-left" data-toggle="modal" data-target="#coment1Modal"></span>
                             <small style="color: black; margin-right: 5px;">1</small>
                         </div>
@@ -260,7 +260,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                             <div class="post-icons">
                                                 <div style="margin-bottom: 5px;">
                                                     <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                                                    <small style="color: black; margin-right: 5px;">20</small>
+                                                    <small style="color: black; margin-right: 5px;">50</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -353,7 +353,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                     <div class="post-icons">
                         <div>
                             <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                            <small style="color: black; margin-right: 5px;">20</small>
+                            <small style="color: black; margin-right: 5px;">8</small>
                             <span class="iconify" data-icon="bi:chat-left" data-toggle="modal" data-target="#coment2Modal"></span>
                             <small style="color: black; margin-right: 5px;">2</small>
                         </div>
@@ -391,7 +391,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                 <div class="post-icons">
                                     <div style="margin-bottom: 5px;">
                                         <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                                        <small style="color: black; margin-right: 5px;">20</small>
+                                        <small style="color: black; margin-right: 5px;">30</small>
                                     </div>
                                 </div>
                             </div>
@@ -415,7 +415,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                                 <div class="post-icons">
                                     <div style="margin-bottom: 5px;">
                                         <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                                        <small style="color: black; margin-right: 5px;">20</small>
+                                        <small style="color: black; margin-right: 5px;">40</small>
                                     </div>
                                 </div>
                             </div>
@@ -456,7 +456,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                     <div class="post-icons">
                         <div>
                             <span class="iconify like" data-icon="clarity:heart-solid" onclick="btnLike(this)"></span>
-                            <small style="color: black; margin-right: 5px;">20</small>
+                            <small style="color: black; margin-right: 5px;">11</small>
                             <span class="iconify" data-icon="bi:chat-left" data-toggle="modal" data-target="#coment3Modal"></span>
                             <small style="color: black; margin-right: 5px;">0</small>
                         </div>
