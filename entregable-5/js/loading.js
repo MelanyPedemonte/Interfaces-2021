@@ -22,7 +22,13 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
         </div>
         <div class="profile">
             <img src="./images/profilepic.png">
-            <span class="iconify" data-icon="ant-design:caret-down-filled"></span>
+            <span class="iconify dropdown-toggle" data-icon="ant-design:caret-down-filled" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"></span>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Perfil</a>
+                <a class="dropdown-item" href="#">Configuracion y Privacidad</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="index.html">Cerrar Sesion</a>
+            </div>
         </div> 
     </header>
 
