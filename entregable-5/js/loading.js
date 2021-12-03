@@ -336,17 +336,28 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
                         </div>
 
             <div class="publicacion">
-                <p style="border-bottom: solid 1px #F4F4F4; text-align: end;"><span class="iconify" data-icon="mdi:dots-horizontal"></span></p>
+            <div style="border-bottom: solid 1px #F4F4F4; text-align: end;">
+            <div>
+                 <p class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="iconify" data-icon="mdi:dots-horizontal"></span></p>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Guardar</a>
+                        <a class="dropdown-item" href="#">Ocultar publicacion</a>
+                        <div class="dropdown-divider"></div>
+                        <a id="btn-promocionar" class="dropdown-item" href="#" onclick="promocionar()">Promocionar</a>
+                    </div>
+                 </div>
+                 </div>
                 <div class="post-info">
                     <div class="person-follow">
                         <div>
-                            <img src="./images/ProfilePic (1).png">
+                            <img src="./images/ProfilePic (8).png">
                         </div>
                         <div style="margin-left: 15px;">
-                            <h6>Alejandro Suarez</h6>
-                            <p style="font-weight: 300; font-size: 12px;">Voluntario en Costa Rica</p>
+                            <h6>Nahuel Diaz Bailey</h6>
+                            <p style="font-weight: 300; font-size: 12px;">Veterinario en PetLovers</p>
                         </div>
                     </div>
+                    <div id="text-prom" style="width: 100px;" class="badge badge-secondary ocultar">Promocionado</div>
                     <p style="font-size: 15px;">La isla caboverdiana de Boa Vista constituye el mejor escenario 
                         del archipiélago atlántico para avistar a la conocida 
                         como tortuga boba, una de las siete especies de quelonios que viajan por todo el mundo.</p>

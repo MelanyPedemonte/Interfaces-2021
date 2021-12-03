@@ -26,3 +26,18 @@ function submitForm() {
         location.href ="./home.html";
     }
 }
+
+function promocionar() {
+    let btn = document.getElementById("btn-promocionar");
+    let text = document.getElementById("text-prom");
+
+    if (btn.innerHTML == 'Promocionar') {
+        btn.innerHTML = 'Dejar de Promocionar';
+        text.style.display = "block";
+     } else {
+        btn.innerHTML = 'Promocionar'; 
+        text.style.display = "none";
+     }
+
+}
+

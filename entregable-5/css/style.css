@@ -111,6 +111,13 @@ h6, h3{
     outline: none;
 }
 
+.btn-secondary {
+    color: black !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    padding: 0px;
+}
+
 /* HEADER */
 header {
     display: flex;
@@ -350,6 +357,10 @@ header a:hover{
 .posts{
     height: 85vh;
     overflow-y: scroll;
+}
+
+.ocultar{
+    display: none;
 }
 
 /*OVERFLOW*/
@@ -1383,6 +1394,10 @@ a:not([href]):not([tabindex]) {
 
 .like-active{
     color:#8E44AD!important;
+}
+
+.dropdown-toggle::after{
+    border:none;
 }
 
 
