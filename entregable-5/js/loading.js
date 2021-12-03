@@ -13,7 +13,7 @@ window.setTimeout(function(){document.querySelector("#loading").innerHTML=`<head
             </a>
         </div>
         <div class="vl"></div>
-        <a class="home" href="home.html">
+        <a class="home active" href="home.html">
             <span class="iconify" data-icon="ant-design:home-outlined"></span>
             <p class="text-header">Inicio</p>
         </a>
